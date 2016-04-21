@@ -19,6 +19,7 @@ import android.animation.TimeAnimator;
 import android.animation.TimeAnimator.TimeListener;
 import android.os.Bundle;
 import com.rbware.github.androidcouchpotato.R;
+import com.rbware.github.androidcouchpotato.widget.EmptyListRowPresenter;
 import com.rbware.github.androidcouchpotato.widget.ItemBridgeAdapter;
 import com.rbware.github.androidcouchpotato.widget.OnItemViewClickedListener;
 import com.rbware.github.androidcouchpotato.widget.OnItemViewSelectedListener;
@@ -410,6 +411,22 @@ public class RowsFragment extends BaseRowFragment {
 
             ItemBridgeAdapter bridgeAdapter =
                     ((ListRowPresenter.ViewHolder) rowVh).getBridgeAdapter();
+            if (mPresenterMapper == null) {
+                mPresenterMapper = bridgeAdapter.getPresenterMapper();
+            } else {
+                bridgeAdapter.setPresenterMapper(mPresenterMapper);
+            }
+        } else if (rowVh instanceof EmptyListRowPresenter.ViewHolder) {
+            HorizontalGridView view = ((EmptyListRowPresenter.ViewHolder) rowVh).getGridView();
+            // Recycled view pool is shared between all list rows
+            if (mRecycledViewPool == null) {
+                mRecycledViewPool = view.getRecycledViewPool();
+            } else {
+                view.setRecycledViewPool(mRecycledViewPool);
+            }
+
+            ItemBridgeAdapter bridgeAdapter =
+                    ((EmptyListRowPresenter.ViewHolder) rowVh).getBridgeAdapter();
             if (mPresenterMapper == null) {
                 mPresenterMapper = bridgeAdapter.getPresenterMapper();
             } else {
