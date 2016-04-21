@@ -51,6 +51,7 @@ public final class EmptyListRowView extends LinearLayout {
         mGridView.setHasFixedSize(false);
 
         mEmptyTextView = (TextView) findViewById(R.id.row_empty_textview);
+        mEmptyTextView.setText("No Text for testing purposes");
 
         // Uncomment this to experiment with page-based scrolling.
         // mGridView.setFocusScrollStrategy(HorizontalGridView.FOCUS_SCROLL_PAGE);

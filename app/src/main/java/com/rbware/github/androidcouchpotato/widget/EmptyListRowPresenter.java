@@ -96,6 +96,10 @@ public class EmptyListRowPresenter extends RowPresenter {
             return mGridView;
         }
 
+        public final TextView getEmptyTextView(){
+            return mEmptyTextView;
+        }
+
         /**
          * Gets ItemBridgeAdapter that creates the list of items.
          * @return ItemBridgeAdapter that creates the list of items.
@@ -268,6 +272,10 @@ public class EmptyListRowPresenter extends RowPresenter {
 
         @Override
         public void onAddPresenter(Presenter presenter, int type) {
+            int itemCount = mRowViewHolder.getGridView().getAdapter().getItemCount();
+            mRowViewHolder.getEmptyTextView().setVisibility(itemCount == 0 ? View.VISIBLE : View.INVISIBLE);
+            mRowViewHolder.getGridView().setVisibility(itemCount == 0 ? View.INVISIBLE : View.VISIBLE);
+
             mRowViewHolder.getGridView().getRecycledViewPool().setMaxRecycledViews(
                     type, getRecycledPoolSize(presenter));
         }
