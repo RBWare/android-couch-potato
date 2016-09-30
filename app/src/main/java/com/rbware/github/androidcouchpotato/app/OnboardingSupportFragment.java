@@ -119,7 +119,7 @@ import java.util.List;
  * <h3>Theming</h3>
  * <p>
  * OnboardingSupportFragment must have access to an appropriate theme. Specifically, the fragment must
- * receive  {@link R.style#Theme_Leanback_Onboarding}, or a theme whose parent is set to that theme.
+ * receive  {@link R.style#Theme_CouchPotato_Onboarding}, or a theme whose parent is set to that theme.
  * Themes can be provided in one of three ways:
  * <ul>
  * <li>The simplest way is to set the theme for the host Activity to the Onboarding theme or a theme

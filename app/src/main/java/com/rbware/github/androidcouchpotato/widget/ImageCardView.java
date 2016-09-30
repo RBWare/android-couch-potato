@@ -35,7 +35,7 @@ import android.widget.TextView;
  * <p>
  * <h3>Styling</h3> There are two different ways to style the ImageCardView. <br>
  * No matter what way you use, all your styles applied to an ImageCardView have to extend the style
- * {@link R.style#Widget_Leanback_ImageCardViewStyle}.
+ * {@link R.style#Widget_CouchPotato_ImageCardViewStyle}.
  * <p>
  * <u>Example:</u><br>
  * 
@@ -106,13 +106,13 @@ import android.widget.TextView;
     </style>}
  * </pre>
  * 
- * @attr ref com.rbware.github.androidcouchpotato.R.styleable#LeanbackTheme_imageCardViewStyle
+ * @attr ref com.rbware.github.androidcouchpotato.R.styleable#CouchPotatoTheme_imageCardViewStyle
  * @attr ref com.rbware.github.androidcouchpotato.R.styleable#lbImageCardView_lbImageCardViewType
- * @attr ref com.rbware.github.androidcouchpotato.R.styleable#LeanbackTheme_imageCardViewTitleStyle
- * @attr ref com.rbware.github.androidcouchpotato.R.styleable#LeanbackTheme_imageCardViewContentStyle
- * @attr ref com.rbware.github.androidcouchpotato.R.styleable#LeanbackTheme_imageCardViewBadgeStyle
- * @attr ref com.rbware.github.androidcouchpotato.R.styleable#LeanbackTheme_imageCardViewImageStyle
- * @attr ref com.rbware.github.androidcouchpotato.R.styleable#LeanbackTheme_imageCardViewInfoAreaStyle
+ * @attr ref com.rbware.github.androidcouchpotato.R.styleable#CouchPotatoTheme_imageCardViewTitleStyle
+ * @attr ref com.rbware.github.androidcouchpotato.R.styleable#CouchPotatoTheme_imageCardViewContentStyle
+ * @attr ref com.rbware.github.androidcouchpotato.R.styleable#CouchPotatoTheme_imageCardViewBadgeStyle
+ * @attr ref com.rbware.github.androidcouchpotato.R.styleable#CouchPotatoTheme_imageCardViewImageStyle
+ * @attr ref com.rbware.github.androidcouchpotato.R.styleable#CouchPotatoTheme_imageCardViewInfoAreaStyle
  */
 public class ImageCardView extends BaseCardView {
 
@@ -153,7 +153,7 @@ public class ImageCardView extends BaseCardView {
      */
     public ImageCardView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        buildImageCardView(attrs, defStyleAttr, R.style.Widget_Leanback_ImageCardView);
+        buildImageCardView(attrs, defStyleAttr, R.style.Widget_CouchPotato_ImageCardView);
     }
 
     private void buildImageCardView(AttributeSet attrs, int defStyleAttr, int defStyle) {

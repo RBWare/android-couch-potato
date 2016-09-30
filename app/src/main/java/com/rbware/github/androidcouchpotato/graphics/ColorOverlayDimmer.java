@@ -39,13 +39,13 @@ public final class ColorOverlayDimmer {
      * Creates a default ColorOverlayDimmer.
      */
     public static ColorOverlayDimmer createDefault(Context context) {
-        TypedArray a = context.obtainStyledAttributes(R.styleable.LeanbackTheme);
+        TypedArray a = context.obtainStyledAttributes(R.styleable.CouchPotatoTheme);
 
-        int dimColor = a.getColor(R.styleable.LeanbackTheme_overlayDimMaskColor,
+        int dimColor = a.getColor(R.styleable.CouchPotatoTheme_overlayDimMaskColor,
                 context.getResources().getColor(R.color.lb_view_dim_mask_color));
-        float activeLevel = a.getFraction(R.styleable.LeanbackTheme_overlayDimActiveLevel, 1, 1,
+        float activeLevel = a.getFraction(R.styleable.CouchPotatoTheme_overlayDimActiveLevel, 1, 1,
                 context.getResources().getFraction(R.fraction.lb_view_active_level, 1, 0));
-        float dimmedLevel = a.getFraction(R.styleable.LeanbackTheme_overlayDimDimmedLevel, 1, 1,
+        float dimmedLevel = a.getFraction(R.styleable.CouchPotatoTheme_overlayDimDimmedLevel, 1, 1,
                 context.getResources().getFraction(R.fraction.lb_view_dimmed_level, 1, 1));
         a.recycle();
         return new ColorOverlayDimmer(dimColor, activeLevel, dimmedLevel);

@@ -401,8 +401,8 @@ public class GuidedActionsStylist implements FragmentAnimationProvider {
      */
     public View onCreateView(LayoutInflater inflater, final ViewGroup container) {
         TypedArray ta = inflater.getContext().getTheme().obtainStyledAttributes(
-                R.styleable.LeanbackGuidedStepTheme);
-        float keylinePercent = ta.getFloat(R.styleable.LeanbackGuidedStepTheme_guidedStepKeyline,
+                R.styleable.CouchPotatoGuidedStepTheme);
+        float keylinePercent = ta.getFloat(R.styleable.CouchPotatoGuidedStepTheme_guidedStepKeyline,
                 40);
         mMainView = (ViewGroup) inflater.inflate(onProvideLayoutId(), container, false);
         mContentView = mMainView.findViewById(mButtonActions ? R.id.guidedactions_content2 :

@@ -619,9 +619,9 @@ public class ListRowPresenter extends RowPresenter {
         HorizontalGridView gridView = rowView.getGridView();
         if (mBrowseRowsFadingEdgeLength < 0) {
             TypedArray ta = gridView.getContext()
-                    .obtainStyledAttributes(R.styleable.LeanbackTheme);
+                    .obtainStyledAttributes(R.styleable.CouchPotatoTheme);
             mBrowseRowsFadingEdgeLength = (int) ta.getDimension(
-                    R.styleable.LeanbackTheme_browseRowsFadingEdgeLength, 0);
+                    R.styleable.CouchPotatoTheme_browseRowsFadingEdgeLength, 0);
             ta.recycle();
         }
         gridView.setFadingLeftEdgeLength(mBrowseRowsFadingEdgeLength);

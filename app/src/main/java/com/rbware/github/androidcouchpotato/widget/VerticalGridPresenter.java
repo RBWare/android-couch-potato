@@ -63,7 +63,7 @@ public class VerticalGridPresenter extends Presenter {
                         if (getOnItemViewLongClickedListener() != null) {
                             getOnItemViewLongClickedListener().onItemLongClicked(itemViewHolder.mHolder, itemViewHolder.mItem, null, null);
                         }
-                        return false;
+                        return true; // Consumed
                     }
                 });
             }

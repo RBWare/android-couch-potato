@@ -37,8 +37,8 @@ class GuidanceStylingRelativeLayout extends RelativeLayout {
 
     private void init() {
         TypedArray ta = getContext().getTheme().obtainStyledAttributes(
-                R.styleable.LeanbackGuidedStepTheme);
-        mTitleKeylinePercent = ta.getFloat(R.styleable.LeanbackGuidedStepTheme_guidedStepKeyline,
+                R.styleable.CouchPotatoGuidedStepTheme);
+        mTitleKeylinePercent = ta.getFloat(R.styleable.CouchPotatoGuidedStepTheme_guidedStepKeyline,
                 40);
         ta.recycle();
     }

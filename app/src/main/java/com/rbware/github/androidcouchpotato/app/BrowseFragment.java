@@ -73,7 +73,7 @@ import static android.support.v7.widget.RecyclerView.NO_POSITION;
  * {@link #startHeadersTransition(boolean)}.
  * <p>
  * The recommended theme to use with a BrowseFragment is
- * {@link com.rbware.github.androidcouchpotato.R.style#Theme_Leanback_Browse}.
+ * {@link com.rbware.github.androidcouchpotato.R.style#Theme_CouchPotato_Browse}.
  * </p>
  */
 public class BrowseFragment extends BaseFragment {
@@ -1044,12 +1044,12 @@ public class BrowseFragment extends BaseFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TypedArray ta = getActivity().obtainStyledAttributes(R.styleable.LeanbackTheme);
+        TypedArray ta = getActivity().obtainStyledAttributes(R.styleable.CouchPotatoTheme);
         mContainerListMarginStart = (int) ta.getDimension(
-                R.styleable.LeanbackTheme_browseRowsMarginStart, getActivity().getResources()
+                R.styleable.CouchPotatoTheme_browseRowsMarginStart, getActivity().getResources()
                 .getDimensionPixelSize(R.dimen.lb_browse_rows_margin_start));
         mContainerListAlignTop = (int) ta.getDimension(
-                R.styleable.LeanbackTheme_browseRowsMarginTop, getActivity().getResources()
+                R.styleable.CouchPotatoTheme_browseRowsMarginTop, getActivity().getResources()
                 .getDimensionPixelSize(R.dimen.lb_browse_rows_margin_top));
         ta.recycle();
 

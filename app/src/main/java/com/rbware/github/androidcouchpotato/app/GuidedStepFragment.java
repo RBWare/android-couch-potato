@@ -88,7 +88,7 @@ import java.util.List;
  * <p>
  * GuidedStepFragments must have access to an appropriate theme in order for the stylists to
  * function properly.  Specifically, the fragment must receive {@link
- * com.rbware.github.androidcouchpotato.R.style#Theme_Leanback_GuidedStep}, or a theme whose parent is
+ * com.rbware.github.androidcouchpotato.R.style#Theme_CouchPotato_GuidedStep}, or a theme whose parent is
  * is set to that theme. Themes can be provided in one of three ways:
  * <ul>
  * <li>The simplest way is to set the theme for the host Activity to the GuidedStep theme or a
@@ -1302,7 +1302,7 @@ public class GuidedStepFragment extends Fragment implements GuidedActionAdapter.
      * side (default) or bottom.
      *
      * Ideally we can retrieve the screen mode settings from the theme attribute
-     * {@code Theme.Leanback.GuidedStep#guidedStepHeightWeight} and use that to
+     * {@code Theme.CouchPotato.GuidedStep#guidedStepHeightWeight} and use that to
      * determine the transition. But the fragment context to retrieve the theme
      * isn't available on platform v23 or earlier.
      *

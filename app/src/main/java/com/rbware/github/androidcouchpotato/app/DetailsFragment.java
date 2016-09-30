@@ -58,11 +58,11 @@ import android.view.ViewGroup;
  * <p>
  * The recommended activity themes to use with a DetailsFragment are
  * <li>
- * {@link com.rbware.github.androidcouchpotato.R.style#Theme_Leanback_Details} with activity
+ * {@link com.rbware.github.androidcouchpotato.R.style#Theme_CouchPotato_Details} with activity
  * shared element transition for {@link FullWidthDetailsOverviewRowPresenter}.
  * </li>
  * <li>
- * {@link com.rbware.github.androidcouchpotato.R.style#Theme_Leanback_Details_NoSharedElementTransition}
+ * {@link com.rbware.github.androidcouchpotato.R.style#Theme_CouchPotato_Details_NoSharedElementTransition}
  * if shared element transition is not needed, for example if first row is not rendered by
  * {@link FullWidthDetailsOverviewRowPresenter}.
  * </li>

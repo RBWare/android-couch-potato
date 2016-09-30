@@ -50,9 +50,9 @@
     <color name="lb_speech_orb_recording">#ff4343</color>
     <color name="lb_tv_white">#FFCCCCCC</color>
     <color name="lb_view_dim_mask_color">#000000</color>
-    <declare-styleable name="LeanbackGuidedStepTheme"><attr format="reference" name="guidedStepTheme"/><attr format="float" name="guidedStepHeightWeight"/><attr format="float" name="guidedStepKeyline"/><attr format="boolean" name="guidedStepThemeFlag"/><attr format="reference|color" name="guidedStepBackground"/><attr format="reference" name="guidedStepImeAppearingAnimation"/><attr format="reference" name="guidedStepImeDisappearingAnimation"/><attr format="reference" name="guidanceContainerStyle"/><attr format="reference" name="guidanceTitleStyle"/><attr format="reference" name="guidanceDescriptionStyle"/><attr format="reference" name="guidanceBreadcrumbStyle"/><attr format="reference" name="guidanceIconStyle"/><attr format="reference" name="guidedActionsSelectorDrawable"/><attr format="dimension|reference" name="guidedActionsElevation"/><attr format="reference" name="guidedActionsBackground"/><attr format="reference" name="guidedActionsBackgroundDark"/><attr format="reference" name="guidedActionsListStyle"/><attr format="reference" name="guidedSubActionsListStyle"/><attr format="reference" name="guidedButtonActionsListStyle"/><attr format="reference" name="guidedActionItemContainerStyle"/><attr format="reference" name="guidedActionItemCheckmarkStyle"/><attr format="reference" name="guidedActionItemIconStyle"/><attr format="reference" name="guidedActionItemContentStyle"/><attr format="reference" name="guidedActionItemTitleStyle"/><attr format="reference" name="guidedActionItemDescriptionStyle"/><attr format="reference" name="guidedActionItemChevronStyle"/><attr format="reference" name="guidedActionPressedAnimation"/><attr format="reference" name="guidedActionUnpressedAnimation"/><attr format="reference" name="guidedActionEnabledChevronAlpha"/><attr format="reference" name="guidedActionDisabledChevronAlpha"/><attr format="reference" name="guidedActionContentWidthWeight"/><attr format="reference" name="guidedActionContentWidthWeightTwoPanels"/><attr format="reference" name="guidedButtonActionsWidthWeight"/><attr format="reference" name="guidedActionTitleMinLines"/><attr format="reference" name="guidedActionTitleMaxLines"/><attr format="reference" name="guidedActionDescriptionMinLines"/><attr format="reference" name="guidedActionVerticalPadding"/><attr format="reference" name="guidedActionsContainerStyle"/><attr format="reference" name="guidedActionsSelectorStyle"/><attr format="reference" name="guidedStepEntryAnimation"/><attr format="reference" name="guidedStepExitAnimation"/><attr format="reference" name="guidedStepReentryAnimation"/><attr format="reference" name="guidedStepReturnAnimation"/><attr format="reference" name="guidanceEntryAnimation"/><attr format="reference" name="guidedActionsEntryAnimation"/><attr format="reference" name="guidedActionsSelectorShowAnimation"/><attr format="reference" name="guidedActionsSelectorHideAnimation"/><attr format="reference" name="guidedActionCheckedAnimation"/><attr format="reference" name="guidedActionUncheckedAnimation"/><attr format="reference" name="guidedActionContentWidth"/><attr format="reference" name="guidedActionContentWidthNoIcon"/></declare-styleable>
-    <declare-styleable name="LeanbackOnboardingTheme"><attr format="reference" name="onboardingTheme"/><attr format="reference" name="onboardingHeaderStyle"/><attr format="reference" name="onboardingTitleStyle"/><attr format="reference" name="onboardingDescriptionStyle"/><attr format="reference" name="onboardingNavigatorContainerStyle"/><attr format="reference" name="onboardingPageIndicatorStyle"/><attr format="reference" name="onboardingStartButtonStyle"/><attr format="reference" name="onboardingLogoStyle"/></declare-styleable>
-    <declare-styleable name="LeanbackTheme"><attr format="dimension" name="browsePaddingStart"/><attr format="dimension" name="browsePaddingEnd"/><attr format="dimension" name="browsePaddingTop"/><attr format="dimension" name="browsePaddingBottom"/><attr format="dimension" name="browseRowsMarginStart"/><attr format="dimension" name="browseRowsMarginTop"/><attr format="dimension" name="browseRowsFadingEdgeLength"/><attr format="reference" name="browseTitleTextStyle"/><attr format="reference" name="browseTitleIconStyle"/><attr format="reference" name="browseTitleViewStyle"/><attr format="reference" name="browseTitleViewLayout"/><attr format="reference" name="headersVerticalGridStyle"/><attr format="reference" name="headerStyle"/><attr format="reference" name="sectionHeaderStyle"/><attr format="reference" name="rowsVerticalGridStyle"/><attr format="reference" name="rowHorizontalGridStyle"/><attr format="reference" name="rowHeaderStyle"/><attr format="reference" name="rowHeaderDockStyle"/><attr format="reference" name="rowHoverCardTitleStyle"/><attr format="reference" name="rowHoverCardDescriptionStyle"/><attr format="reference" name="baseCardViewStyle"/><attr format="reference" name="imageCardViewStyle"/><attr format="reference" name="imageCardViewImageStyle"/><attr format="reference" name="imageCardViewTitleStyle"/><attr format="reference" name="imageCardViewContentStyle"/><attr format="reference" name="imageCardViewBadgeStyle"/><attr format="reference" name="imageCardViewInfoAreaStyle"/><attr format="reference" name="detailsDescriptionTitleStyle"/><attr format="reference" name="detailsDescriptionSubtitleStyle"/><attr format="reference" name="detailsDescriptionBodyStyle"/><attr format="reference" name="detailsActionButtonStyle"/><attr format="dimension" name="playbackPaddingStart"/><attr format="dimension" name="playbackPaddingEnd"/><attr format="dimension" name="playbackMediaItemPaddingStart"/><attr format="reference" name="playbackMediaListHeaderStyle"/><attr format="reference" name="playbackMediaItemRowStyle"/><attr format="reference" name="playbackMediaItemSeparatorStyle"/><attr format="reference" name="playbackMediaListHeaderTitleStyle"/><attr format="reference" name="playbackMediaItemDetailsStyle"/><attr format="reference" name="playbackMediaItemNumberViewFlipperStyle"/><attr format="reference" name="playbackMediaItemNumberViewFlipperLayout"/><attr format="reference" name="playbackMediaItemNumberStyle"/><attr format="reference" name="playbackMediaItemNameStyle"/><attr format="reference" name="playbackMediaItemDurationStyle"/><attr format="reference" name="playbackControlsButtonStyle"/><attr format="reference" name="playbackControlButtonLabelStyle"/><attr format="reference" name="playbackControlsTimeStyle"/><attr format="reference" name="itemsVerticalGridStyle"/><attr format="reference" name="errorMessageStyle"/><attr format="reference|color" name="defaultBrandColor"/><attr format="reference|color" name="defaultBrandColorDark"/><attr format="reference|color" name="defaultSearchColor"/><attr format="reference|color" name="defaultSearchIconColor"/><attr format="reference|color" name="defaultSearchBrightColor"/><attr format="reference|color" name="defaultSectionHeaderColor"/><attr format="reference" name="searchOrbViewStyle"/><attr format="reference" name="defaultSearchIcon"/><attr format="reference|color" name="playbackProgressPrimaryColor"/><attr format="reference|color" name="playbackControlsIconHighlightColor"/><attr format="reference" name="playbackControlsActionIcons"/><attr format="color" name="overlayDimMaskColor"/><attr format="fraction" name="overlayDimActiveLevel"/><attr format="fraction" name="overlayDimDimmedLevel"/></declare-styleable>
+    <declare-styleable name="CouchPotatoGuidedStepTheme"><attr format="reference" name="guidedStepTheme"/><attr format="float" name="guidedStepHeightWeight"/><attr format="float" name="guidedStepKeyline"/><attr format="boolean" name="guidedStepThemeFlag"/><attr format="reference|color" name="guidedStepBackground"/><attr format="reference" name="guidedStepImeAppearingAnimation"/><attr format="reference" name="guidedStepImeDisappearingAnimation"/><attr format="reference" name="guidanceContainerStyle"/><attr format="reference" name="guidanceTitleStyle"/><attr format="reference" name="guidanceDescriptionStyle"/><attr format="reference" name="guidanceBreadcrumbStyle"/><attr format="reference" name="guidanceIconStyle"/><attr format="reference" name="guidedActionsSelectorDrawable"/><attr format="dimension|reference" name="guidedActionsElevation"/><attr format="reference" name="guidedActionsBackground"/><attr format="reference" name="guidedActionsBackgroundDark"/><attr format="reference" name="guidedActionsListStyle"/><attr format="reference" name="guidedSubActionsListStyle"/><attr format="reference" name="guidedButtonActionsListStyle"/><attr format="reference" name="guidedActionItemContainerStyle"/><attr format="reference" name="guidedActionItemCheckmarkStyle"/><attr format="reference" name="guidedActionItemIconStyle"/><attr format="reference" name="guidedActionItemContentStyle"/><attr format="reference" name="guidedActionItemTitleStyle"/><attr format="reference" name="guidedActionItemDescriptionStyle"/><attr format="reference" name="guidedActionItemChevronStyle"/><attr format="reference" name="guidedActionPressedAnimation"/><attr format="reference" name="guidedActionUnpressedAnimation"/><attr format="reference" name="guidedActionEnabledChevronAlpha"/><attr format="reference" name="guidedActionDisabledChevronAlpha"/><attr format="reference" name="guidedActionContentWidthWeight"/><attr format="reference" name="guidedActionContentWidthWeightTwoPanels"/><attr format="reference" name="guidedButtonActionsWidthWeight"/><attr format="reference" name="guidedActionTitleMinLines"/><attr format="reference" name="guidedActionTitleMaxLines"/><attr format="reference" name="guidedActionDescriptionMinLines"/><attr format="reference" name="guidedActionVerticalPadding"/><attr format="reference" name="guidedActionsContainerStyle"/><attr format="reference" name="guidedActionsSelectorStyle"/><attr format="reference" name="guidedStepEntryAnimation"/><attr format="reference" name="guidedStepExitAnimation"/><attr format="reference" name="guidedStepReentryAnimation"/><attr format="reference" name="guidedStepReturnAnimation"/><attr format="reference" name="guidanceEntryAnimation"/><attr format="reference" name="guidedActionsEntryAnimation"/><attr format="reference" name="guidedActionsSelectorShowAnimation"/><attr format="reference" name="guidedActionsSelectorHideAnimation"/><attr format="reference" name="guidedActionCheckedAnimation"/><attr format="reference" name="guidedActionUncheckedAnimation"/><attr format="reference" name="guidedActionContentWidth"/><attr format="reference" name="guidedActionContentWidthNoIcon"/></declare-styleable>
+    <declare-styleable name="CouchPotatoOnboardingTheme"><attr format="reference" name="onboardingTheme"/><attr format="reference" name="onboardingHeaderStyle"/><attr format="reference" name="onboardingTitleStyle"/><attr format="reference" name="onboardingDescriptionStyle"/><attr format="reference" name="onboardingNavigatorContainerStyle"/><attr format="reference" name="onboardingPageIndicatorStyle"/><attr format="reference" name="onboardingStartButtonStyle"/><attr format="reference" name="onboardingLogoStyle"/></declare-styleable>
+    <declare-styleable name="CouchPotatoTheme"><attr format="dimension" name="browsePaddingStart"/><attr format="dimension" name="browsePaddingEnd"/><attr format="dimension" name="browsePaddingTop"/><attr format="dimension" name="browsePaddingBottom"/><attr format="dimension" name="browseRowsMarginStart"/><attr format="dimension" name="browseRowsMarginTop"/><attr format="dimension" name="browseRowsFadingEdgeLength"/><attr format="reference" name="browseTitleTextStyle"/><attr format="reference" name="browseTitleIconStyle"/><attr format="reference" name="browseTitleViewStyle"/><attr format="reference" name="browseTitleViewLayout"/><attr format="reference" name="headersVerticalGridStyle"/><attr format="reference" name="headerStyle"/><attr format="reference" name="sectionHeaderStyle"/><attr format="reference" name="rowsVerticalGridStyle"/><attr format="reference" name="rowHorizontalGridStyle"/><attr format="reference" name="rowHeaderStyle"/><attr format="reference" name="rowHeaderDockStyle"/><attr format="reference" name="rowHoverCardTitleStyle"/><attr format="reference" name="rowHoverCardDescriptionStyle"/><attr format="reference" name="baseCardViewStyle"/><attr format="reference" name="imageCardViewStyle"/><attr format="reference" name="imageCardViewImageStyle"/><attr format="reference" name="imageCardViewTitleStyle"/><attr format="reference" name="imageCardViewContentStyle"/><attr format="reference" name="imageCardViewBadgeStyle"/><attr format="reference" name="imageCardViewInfoAreaStyle"/><attr format="reference" name="detailsDescriptionTitleStyle"/><attr format="reference" name="detailsDescriptionSubtitleStyle"/><attr format="reference" name="detailsDescriptionBodyStyle"/><attr format="reference" name="detailsActionButtonStyle"/><attr format="dimension" name="playbackPaddingStart"/><attr format="dimension" name="playbackPaddingEnd"/><attr format="dimension" name="playbackMediaItemPaddingStart"/><attr format="reference" name="playbackMediaListHeaderStyle"/><attr format="reference" name="playbackMediaItemRowStyle"/><attr format="reference" name="playbackMediaItemSeparatorStyle"/><attr format="reference" name="playbackMediaListHeaderTitleStyle"/><attr format="reference" name="playbackMediaItemDetailsStyle"/><attr format="reference" name="playbackMediaItemNumberViewFlipperStyle"/><attr format="reference" name="playbackMediaItemNumberViewFlipperLayout"/><attr format="reference" name="playbackMediaItemNumberStyle"/><attr format="reference" name="playbackMediaItemNameStyle"/><attr format="reference" name="playbackMediaItemDurationStyle"/><attr format="reference" name="playbackControlsButtonStyle"/><attr format="reference" name="playbackControlButtonLabelStyle"/><attr format="reference" name="playbackControlsTimeStyle"/><attr format="reference" name="itemsVerticalGridStyle"/><attr format="reference" name="errorMessageStyle"/><attr format="reference|color" name="defaultBrandColor"/><attr format="reference|color" name="defaultBrandColorDark"/><attr format="reference|color" name="defaultSearchColor"/><attr format="reference|color" name="defaultSearchIconColor"/><attr format="reference|color" name="defaultSearchBrightColor"/><attr format="reference|color" name="defaultSectionHeaderColor"/><attr format="reference" name="searchOrbViewStyle"/><attr format="reference" name="defaultSearchIcon"/><attr format="reference|color" name="playbackProgressPrimaryColor"/><attr format="reference|color" name="playbackControlsIconHighlightColor"/><attr format="reference" name="playbackControlsActionIcons"/><attr format="color" name="overlayDimMaskColor"/><attr format="fraction" name="overlayDimActiveLevel"/><attr format="fraction" name="overlayDimDimmedLevel"/></declare-styleable>
     <declare-styleable name="PagingIndicator"><attr format="reference" name="dotRadius"/><attr format="reference" name="arrowRadius"/><attr format="reference" name="dotToDotGap"/><attr format="reference" name="dotToArrowGap"/><attr format="reference" name="dotBgColor"/><attr format="reference" name="arrowBgColor"/></declare-styleable>
     <declare-styleable name="lbBaseCardView"><attr format="reference|color" name="cardForeground"/><attr format="reference|color" name="cardBackground"/><attr format="enum" name="cardType">
             
@@ -440,110 +440,110 @@
     <string name="lb_search_bar_hint_with_title_speech">Speak to search <ns1:g id="search context">%1$s</ns1:g></string>
     <string name="lb_time_separator">:</string>
     <string name="orb_search_action">Search Action</string>
-    <style name="TextAppearance.Leanback" parent="TextAppearance.LeanbackBase">
+    <style name="TextAppearance.CouchPotato" parent="TextAppearance.LeanbackBase">
         <!-- Any text appearance overrides go here. -->
         <item name="android:fontFamily">sans-serif-condensed</item>
     </style>
-    <style name="TextAppearance.Leanback.DetailsActionButton">
+    <style name="TextAppearance.CouchPotato.DetailsActionButton">
         <item name="android:textSize">@dimen/lb_action_text_size</item>
         <item name="android:textColor">@color/lb_action_text_color</item>
         <item name="android:textAllCaps">true</item>
     </style>
-    <style name="TextAppearance.Leanback.DetailsDescriptionBody">
+    <style name="TextAppearance.CouchPotato.DetailsDescriptionBody">
         <item name="android:textSize">@dimen/lb_details_description_body_text_size</item>
         <item name="android:textColor">@color/lb_details_description_body_color</item>
         <item name="android:fontFamily">sans-serif</item>
     </style>
-    <style name="TextAppearance.Leanback.DetailsDescriptionSubtitle">
+    <style name="TextAppearance.CouchPotato.DetailsDescriptionSubtitle">
         <item name="android:textSize">@dimen/lb_details_description_subtitle_text_size</item>
         <item name="android:textColor">@color/lb_details_description_color</item>
         <item name="android:fontFamily">sans-serif</item>
     </style>
-    <style name="TextAppearance.Leanback.DetailsDescriptionTitle">
+    <style name="TextAppearance.CouchPotato.DetailsDescriptionTitle">
         <item name="android:textSize">@dimen/lb_details_description_title_text_size</item>
         <item name="android:textColor">@color/lb_details_description_color</item>
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
-    <style name="TextAppearance.Leanback.ErrorMessage">
+    <style name="TextAppearance.CouchPotato.ErrorMessage">
         <item name="android:textSize">@dimen/lb_error_message_text_size</item>
         <item name="android:textColor">@color/lb_error_message</item>
         <item name="android:fontFamily">sans-serif</item>
     </style>
-    <style name="TextAppearance.Leanback.Header" parent="TextAppearance.Leanback">
+    <style name="TextAppearance.CouchPotato.Header" parent="TextAppearance.CouchPotato">
         <item name="android:textSize">@dimen/lb_browse_header_text_size</item>
         <item name="android:textColor">@color/lb_browse_header_color</item>
     </style>
-    <style name="TextAppearance.Leanback.Header.Section">
+    <style name="TextAppearance.CouchPotato.Header.Section">
         <item name="android:textColor">?defaultSectionHeaderColor</item>
         <item name="android:textSize">@dimen/lb_browse_section_header_text_size</item>
     </style>
-    <style name="TextAppearance.Leanback.ImageCardView">
+    <style name="TextAppearance.CouchPotato.ImageCardView">
     </style>
-    <style name="TextAppearance.Leanback.ImageCardView.Content">
+    <style name="TextAppearance.CouchPotato.ImageCardView.Content">
         <item name="android:textColor">@color/lb_basic_card_content_text_color</item>
         <item name="android:textSize">@dimen/lb_basic_card_content_text_size</item>
     </style>
-    <style name="TextAppearance.Leanback.ImageCardView.Title">
+    <style name="TextAppearance.CouchPotato.ImageCardView.Title">
         <item name="android:textColor">@color/lb_basic_card_title_text_color</item>
         <item name="android:textSize">@dimen/lb_basic_card_title_text_size</item>
     </style>
-    <style name="TextAppearance.Leanback.PlaybackControlLabel">
+    <style name="TextAppearance.CouchPotato.PlaybackControlLabel">
         <item name="android:textSize">@dimen/lb_control_button_text_size</item>
         <item name="android:textColor">@color/lb_control_button_text</item>
         <item name="android:fontFamily">sans-serif</item>
     </style>
-    <style name="TextAppearance.Leanback.PlaybackControlsTime">
+    <style name="TextAppearance.CouchPotato.PlaybackControlsTime">
         <item name="android:textSize">@dimen/lb_playback_controls_time_text_size</item>
         <item name="android:textColor">@color/lb_playback_controls_time_text_color</item>
         <item name="android:fontFamily">sans-serif</item>
     </style>
-    <style name="TextAppearance.Leanback.PlaybackMediaItemDuration">
+    <style name="TextAppearance.CouchPotato.PlaybackMediaItemDuration">
         <item name="android:textColor">#80FFFFFF</item>
         <item name="android:textSize">18sp</item>
         <item name="android:fontFamily">sans-serif-regular</item>
     </style>
-    <style name="TextAppearance.Leanback.PlaybackMediaItemName">
+    <style name="TextAppearance.CouchPotato.PlaybackMediaItemName">
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">18sp</item>
         <item name="android:fontFamily">sans-serif-regular</item>
     </style>
-    <style name="TextAppearance.Leanback.PlaybackMediaItemNumber">
+    <style name="TextAppearance.CouchPotato.PlaybackMediaItemNumber">
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">18sp</item>
         <item name="android:fontFamily">sans-serif-regular</item>
     </style>
-    <style name="TextAppearance.Leanback.PlaybackMediaListHeaderTitle">
+    <style name="TextAppearance.CouchPotato.PlaybackMediaListHeaderTitle">
         <item name="android:textColor">#80EEEEEE</item>
         <item name="android:textSize">18sp</item>
         <item name="android:fontFamily">sans-serif-regular</item>
     </style>
-    <style name="TextAppearance.Leanback.Row.Header" parent="TextAppearance.Leanback.Header">
+    <style name="TextAppearance.CouchPotato.Row.Header" parent="TextAppearance.CouchPotato.Header">
     </style>
-    <style name="TextAppearance.Leanback.Row.HoverCardDescription" parent="TextAppearance.Leanback">
+    <style name="TextAppearance.CouchPotato.Row.HoverCardDescription" parent="TextAppearance.CouchPotato">
         <item name="android:textSize">@dimen/lb_browse_row_hovercard_description_font_size</item>
     </style>
-    <style name="TextAppearance.Leanback.Row.HoverCardTitle" parent="TextAppearance.Leanback">
+    <style name="TextAppearance.CouchPotato.Row.HoverCardTitle" parent="TextAppearance.CouchPotato">
         <item name="android:textSize">@dimen/lb_browse_row_hovercard_title_font_size</item>
     </style>
-    <style name="TextAppearance.Leanback.SearchTextEdit" parent="TextAppearance.Leanback">
+    <style name="TextAppearance.CouchPotato.SearchTextEdit" parent="TextAppearance.CouchPotato">
         <item name="android:textSize">@dimen/lb_search_bar_text_size</item>
     </style>
-    <style name="TextAppearance.Leanback.Title" parent="TextAppearance.Leanback">
+    <style name="TextAppearance.CouchPotato.Title" parent="TextAppearance.CouchPotato">
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textSize">@dimen/lb_browse_title_text_size</item>
         <item name="android:textColor">@color/lb_browse_title_color</item>
     </style>
-    <style name="TextAppearance.LeanbackBase" parent="android:TextAppearance.Holo">
+    <style name="TextAppearance.CouchPotatoBase" parent="android:TextAppearance.Holo">
     </style>
-    <style name="Theme.Leanback" parent="Theme.LeanbackBase">
+    <style name="Theme.CouchPotato" parent="Theme.LeanbackBase">
 
-        <item name="baseCardViewStyle">@style/Widget.Leanback.BaseCardViewStyle</item>
-        <item name="imageCardViewStyle">@style/Widget.Leanback.ImageCardViewStyle</item>
-        <item name="imageCardViewImageStyle">@style/Widget.Leanback.ImageCardView.ImageStyle</item>
-        <item name="imageCardViewTitleStyle">@style/Widget.Leanback.ImageCardView.TitleStyle</item>
-        <item name="imageCardViewContentStyle">@style/Widget.Leanback.ImageCardView.ContentStyle</item>
-        <item name="imageCardViewBadgeStyle">@style/Widget.Leanback.ImageCardView.BadgeStyle</item>
-        <item name="imageCardViewInfoAreaStyle">@style/Widget.Leanback.ImageCardView.InfoAreaStyle</item>
+        <item name="baseCardViewStyle">@style/Widget.CouchPotato.BaseCardViewStyle</item>
+        <item name="imageCardViewStyle">@style/Widget.CouchPotato.ImageCardViewStyle</item>
+        <item name="imageCardViewImageStyle">@style/Widget.CouchPotato.ImageCardView.ImageStyle</item>
+        <item name="imageCardViewTitleStyle">@style/Widget.CouchPotato.ImageCardView.TitleStyle</item>
+        <item name="imageCardViewContentStyle">@style/Widget.CouchPotato.ImageCardView.ContentStyle</item>
+        <item name="imageCardViewBadgeStyle">@style/Widget.CouchPotato.ImageCardView.BadgeStyle</item>
+        <item name="imageCardViewInfoAreaStyle">@style/Widget.CouchPotato.ImageCardView.InfoAreaStyle</item>
 
         <item name="browsePaddingStart">@dimen/lb_browse_padding_start</item>
         <item name="browsePaddingEnd">@dimen/lb_browse_padding_end</item>
@@ -553,54 +553,54 @@
         <item name="browseRowsMarginTop">@dimen/lb_browse_rows_margin_top</item>
         <item name="browseRowsFadingEdgeLength">@dimen/lb_browse_rows_fading_edge</item>
 
-        <item name="headersVerticalGridStyle">@style/Widget.Leanback.Headers.VerticalGridView</item>
-        <item name="headerStyle">@style/Widget.Leanback.Header</item>
-        <item name="sectionHeaderStyle">@style/Widget.Leanback.Header.Section</item>
+        <item name="headersVerticalGridStyle">@style/Widget.CouchPotato.Headers.VerticalGridView</item>
+        <item name="headerStyle">@style/Widget.CouchPotato.Header</item>
+        <item name="sectionHeaderStyle">@style/Widget.CouchPotato.Header.Section</item>
 
-        <item name="rowsVerticalGridStyle">@style/Widget.Leanback.Rows.VerticalGridView</item>
-        <item name="rowHorizontalGridStyle">@style/Widget.Leanback.Row.HorizontalGridView</item>
-        <item name="itemsVerticalGridStyle">@style/Widget.Leanback.GridItems.VerticalGridView</item>
+        <item name="rowsVerticalGridStyle">@style/Widget.CouchPotato.Rows.VerticalGridView</item>
+        <item name="rowHorizontalGridStyle">@style/Widget.CouchPotato.Row.HorizontalGridView</item>
+        <item name="itemsVerticalGridStyle">@style/Widget.CouchPotato.GridItems.VerticalGridView</item>
 
         <item name="browseTitleViewLayout">@layout/lb_browse_title</item>
-        <item name="browseTitleTextStyle">@style/Widget.Leanback.Title.Text</item>
-        <item name="browseTitleIconStyle">@style/Widget.Leanback.Title.Icon</item>
-        <item name="browseTitleViewStyle">@style/Widget.Leanback.TitleView</item>
+        <item name="browseTitleTextStyle">@style/Widget.CouchPotato.Title.Text</item>
+        <item name="browseTitleIconStyle">@style/Widget.CouchPotato.Title.Icon</item>
+        <item name="browseTitleViewStyle">@style/Widget.CouchPotato.TitleView</item>
 
-        <item name="rowHeaderStyle">@style/Widget.Leanback.Row.Header</item>
-        <item name="rowHoverCardTitleStyle">@style/Widget.Leanback.Row.HoverCardTitle</item>
-        <item name="rowHoverCardDescriptionStyle">@style/Widget.Leanback.Row.HoverCardDescription</item>
-        <item name="rowHeaderDockStyle">@style/Widget.Leanback.Row.HeaderDock</item>
+        <item name="rowHeaderStyle">@style/Widget.CouchPotato.Row.Header</item>
+        <item name="rowHoverCardTitleStyle">@style/Widget.CouchPotato.Row.HoverCardTitle</item>
+        <item name="rowHoverCardDescriptionStyle">@style/Widget.CouchPotato.Row.HoverCardDescription</item>
+        <item name="rowHeaderDockStyle">@style/Widget.CouchPotato.Row.HeaderDock</item>
 
-        <item name="searchOrbViewStyle">@style/Widget.Leanback.SearchOrbViewStyle</item>
+        <item name="searchOrbViewStyle">@style/Widget.CouchPotato.SearchOrbViewStyle</item>
 
 
-        <item name="detailsDescriptionTitleStyle">@style/Widget.Leanback.DetailsDescriptionTitleStyle</item>
-        <item name="detailsDescriptionSubtitleStyle">@style/Widget.Leanback.DetailsDescriptionSubtitleStyle</item>
-        <item name="detailsDescriptionBodyStyle">@style/Widget.Leanback.DetailsDescriptionBodyStyle</item>
-        <item name="detailsActionButtonStyle">@style/Widget.Leanback.DetailsActionButtonStyle</item>
+        <item name="detailsDescriptionTitleStyle">@style/Widget.CouchPotato.DetailsDescriptionTitleStyle</item>
+        <item name="detailsDescriptionSubtitleStyle">@style/Widget.CouchPotato.DetailsDescriptionSubtitleStyle</item>
+        <item name="detailsDescriptionBodyStyle">@style/Widget.CouchPotato.DetailsDescriptionBodyStyle</item>
+        <item name="detailsActionButtonStyle">@style/Widget.CouchPotato.DetailsActionButtonStyle</item>
         <!-- Attributes used for styling of a playback -->
         <item name="playbackPaddingStart">@dimen/lb_playback_controls_margin_start</item>
         <item name="playbackPaddingEnd">@dimen/lb_playback_controls_margin_end</item>
         <item name="playbackMediaItemPaddingStart">@dimen/lb_playback_media_row_horizontal_padding</item>
 
-        <item name="playbackMediaListHeaderStyle">@style/Widget.Leanback.PlaybackMediaListHeaderStyle</item>
-        <item name="playbackMediaItemRowStyle">@style/Widget.Leanback.PlaybackMediaItemRowStyle</item>
-        <item name="playbackMediaItemSeparatorStyle">@style/Widget.Leanback.PlaybackMediaItemSeparatorStyle</item>
-        <item name="playbackMediaListHeaderTitleStyle">@style/Widget.Leanback.PlaybackMediaListHeaderTitleStyle</item>
-        <item name="playbackMediaItemDetailsStyle">@style/Widget.Leanback.PlaybackMediaItemDetailsStyle</item>
-        <item name="playbackMediaItemNumberViewFlipperStyle">@style/Widget.Leanback.PlaybackMediaItemNumberViewFlipperStyle</item>
+        <item name="playbackMediaListHeaderStyle">@style/Widget.CouchPotato.PlaybackMediaListHeaderStyle</item>
+        <item name="playbackMediaItemRowStyle">@style/Widget.CouchPotato.PlaybackMediaItemRowStyle</item>
+        <item name="playbackMediaItemSeparatorStyle">@style/Widget.CouchPotato.PlaybackMediaItemSeparatorStyle</item>
+        <item name="playbackMediaListHeaderTitleStyle">@style/Widget.CouchPotato.PlaybackMediaListHeaderTitleStyle</item>
+        <item name="playbackMediaItemDetailsStyle">@style/Widget.CouchPotato.PlaybackMediaItemDetailsStyle</item>
+        <item name="playbackMediaItemNumberViewFlipperStyle">@style/Widget.CouchPotato.PlaybackMediaItemNumberViewFlipperStyle</item>
         <item name="playbackMediaItemNumberViewFlipperLayout">@layout/lb_media_item_number_view_flipper</item>
-        <item name="playbackMediaItemNumberStyle">@style/Widget.Leanback.PlaybackMediaItemNumberStyle</item>
-        <item name="playbackMediaItemNameStyle">@style/Widget.Leanback.PlaybackMediaItemNameStyle</item>
-        <item name="playbackMediaItemDurationStyle">@style/Widget.Leanback.PlaybackMediaItemDurationStyle</item>
+        <item name="playbackMediaItemNumberStyle">@style/Widget.CouchPotato.PlaybackMediaItemNumberStyle</item>
+        <item name="playbackMediaItemNameStyle">@style/Widget.CouchPotato.PlaybackMediaItemNameStyle</item>
+        <item name="playbackMediaItemDurationStyle">@style/Widget.CouchPotato.PlaybackMediaItemDurationStyle</item>
 
-        <item name="playbackControlsButtonStyle">@style/Widget.Leanback.PlaybackControlsButtonStyle</item>
-        <item name="playbackControlButtonLabelStyle">@style/Widget.Leanback.PlaybackControlLabelStyle</item>
-        <item name="playbackControlsTimeStyle">@style/Widget.Leanback.PlaybackControlsTimeStyle</item>
-        <item name="playbackControlsActionIcons">@style/Widget.Leanback.PlaybackControlsActionIconsStyle</item>
+        <item name="playbackControlsButtonStyle">@style/Widget.CouchPotato.PlaybackControlsButtonStyle</item>
+        <item name="playbackControlButtonLabelStyle">@style/Widget.CouchPotato.PlaybackControlLabelStyle</item>
+        <item name="playbackControlsTimeStyle">@style/Widget.CouchPotato.PlaybackControlsTimeStyle</item>
+        <item name="playbackControlsActionIcons">@style/Widget.CouchPotato.PlaybackControlsActionIconsStyle</item>
 
 
-        <item name="errorMessageStyle">@style/Widget.Leanback.ErrorMessageStyle</item>
+        <item name="errorMessageStyle">@style/Widget.CouchPotato.ErrorMessageStyle</item>
 
         <item name="defaultSearchColor">@color/lb_default_search_color</item>
         <item name="defaultSearchIconColor">@color/lb_default_search_icon_color</item>
@@ -610,10 +610,10 @@
         <item name="defaultSectionHeaderColor">?attr/defaultSearchColor</item>
 
         <!-- android:windowSharedElementEnterTransition is kept for backward compatibility for apps still refer
-        to Theme.Leanback, app should use Theme.Leanback.Details instead -->
+        to Theme.CouchPotato, app should use Theme.CouchPotato.Details instead -->
         <item name="android:windowSharedElementEnterTransition">@transition/lb_shared_element_enter_transition</item>
         <!-- android:windowSharedElementReturnTransition is kept for backward compatibility for apps still refer
-        to Theme.Leanback, app should use Theme.Leanback.Details instead -->
+        to Theme.CouchPotato, app should use Theme.CouchPotato.Details instead -->
         <item name="android:windowSharedElementReturnTransition">@transition/lb_shared_element_return_transition</item>
         <item name="android:windowEnterTransition">@transition/lb_enter_transition</item>
         <item name="android:windowReturnTransition">@transition/lb_return_transition</item>
@@ -624,21 +624,21 @@
         <item name="overlayDimDimmedLevel">@fraction/lb_view_dimmed_level</item>
 
     </style>
-    <style name="Theme.Leanback.Browse" parent="Theme.Leanback">
+    <style name="Theme.CouchPotato.Browse" parent="Theme.CouchPotato">
         <item name="android:windowEnterTransition">@transition/lb_browse_enter_transition</item>
         <item name="android:windowReturnTransition">@transition/lb_browse_return_transition</item>
     </style>
-    <style name="Theme.Leanback.Details" parent="Theme.Leanback">
+    <style name="Theme.CouchPotato.Details" parent="Theme.CouchPotato">
         <item name="android:windowEnterTransition">@transition/lb_details_enter_transition</item>
         <item name="android:windowReturnTransition">@transition/lb_details_return_transition</item>
         <item name="android:windowSharedElementEnterTransition">@transition/lb_shared_element_enter_transition</item>
         <item name="android:windowSharedElementReturnTransition">@transition/lb_shared_element_return_transition</item>
     </style>
-    <style name="Theme.Leanback.Details.NoSharedElementTransition">
+    <style name="Theme.CouchPotato.Details.NoSharedElementTransition">
         <item name="android:windowSharedElementEnterTransition">@null</item>
         <item name="android:windowSharedElementReturnTransition">@null</item>
     </style>
-    <style name="Theme.Leanback.GuidedStep" parent="Theme.Leanback.GuidedStepBase">
+    <style name="Theme.CouchPotato.GuidedStep" parent="Theme.CouchPotato.GuidedStepBase">
         <item name="guidedStepThemeFlag">true</item>
         <item name="guidedStepHeightWeight">@string/lb_guidedstep_height_weight</item>
 
@@ -655,26 +655,26 @@
         <item name="guidedStepImeAppearingAnimation">@animator/lb_guidedstep_slide_up</item>
         <item name="guidedStepImeDisappearingAnimation">@animator/lb_guidedstep_slide_down</item>
 
-        <item name="guidanceContainerStyle">@style/Widget.Leanback.GuidanceContainerStyle</item>
-        <item name="guidanceIconStyle">@style/Widget.Leanback.GuidanceIconStyle</item>
-        <item name="guidanceTitleStyle">@style/Widget.Leanback.GuidanceTitleStyle</item>
-        <item name="guidanceBreadcrumbStyle">@style/Widget.Leanback.GuidanceBreadcrumbStyle</item>
-        <item name="guidanceDescriptionStyle">@style/Widget.Leanback.GuidanceDescriptionStyle</item>
+        <item name="guidanceContainerStyle">@style/Widget.CouchPotato.GuidanceContainerStyle</item>
+        <item name="guidanceIconStyle">@style/Widget.CouchPotato.GuidanceIconStyle</item>
+        <item name="guidanceTitleStyle">@style/Widget.CouchPotato.GuidanceTitleStyle</item>
+        <item name="guidanceBreadcrumbStyle">@style/Widget.CouchPotato.GuidanceBreadcrumbStyle</item>
+        <item name="guidanceDescriptionStyle">@style/Widget.CouchPotato.GuidanceDescriptionStyle</item>
 
         <item name="guidedActionsElevation">@dimen/lb_guidedactions_elevation</item>
         <item name="guidedActionsBackground">@color/lb_guidedactions_background</item>
         <item name="guidedActionsBackgroundDark">@color/lb_guidedactions_background_dark</item>
-        <item name="guidedActionsListStyle">@style/Widget.Leanback.GuidedActionsListStyle</item>
-        <item name="guidedSubActionsListStyle">@style/Widget.Leanback.GuidedSubActionsListStyle</item>
-        <item name="guidedButtonActionsListStyle">@style/Widget.Leanback.GuidedButtonActionsListStyle</item>
+        <item name="guidedActionsListStyle">@style/Widget.CouchPotato.GuidedActionsListStyle</item>
+        <item name="guidedSubActionsListStyle">@style/Widget.CouchPotato.GuidedSubActionsListStyle</item>
+        <item name="guidedButtonActionsListStyle">@style/Widget.CouchPotato.GuidedButtonActionsListStyle</item>
 
-        <item name="guidedActionItemContainerStyle">@style/Widget.Leanback.GuidedActionItemContainerStyle</item>
-        <item name="guidedActionItemCheckmarkStyle">@style/Widget.Leanback.GuidedActionItemCheckmarkStyle</item>
-        <item name="guidedActionItemIconStyle">@style/Widget.Leanback.GuidedActionItemIconStyle</item>
-        <item name="guidedActionItemContentStyle">@style/Widget.Leanback.GuidedActionItemContentStyle</item>
-        <item name="guidedActionItemTitleStyle">@style/Widget.Leanback.GuidedActionItemTitleStyle</item>
-        <item name="guidedActionItemDescriptionStyle">@style/Widget.Leanback.GuidedActionItemDescriptionStyle</item>
-        <item name="guidedActionItemChevronStyle">@style/Widget.Leanback.GuidedActionItemChevronStyle</item>
+        <item name="guidedActionItemContainerStyle">@style/Widget.CouchPotato.GuidedActionItemContainerStyle</item>
+        <item name="guidedActionItemCheckmarkStyle">@style/Widget.CouchPotato.GuidedActionItemCheckmarkStyle</item>
+        <item name="guidedActionItemIconStyle">@style/Widget.CouchPotato.GuidedActionItemIconStyle</item>
+        <item name="guidedActionItemContentStyle">@style/Widget.CouchPotato.GuidedActionItemContentStyle</item>
+        <item name="guidedActionItemTitleStyle">@style/Widget.CouchPotato.GuidedActionItemTitleStyle</item>
+        <item name="guidedActionItemDescriptionStyle">@style/Widget.CouchPotato.GuidedActionItemDescriptionStyle</item>
+        <item name="guidedActionItemChevronStyle">@style/Widget.CouchPotato.GuidedActionItemChevronStyle</item>
 
         <item name="guidedActionPressedAnimation">@animator/lb_guidedactions_item_pressed</item>
         <item name="guidedActionUnpressedAnimation">@animator/lb_guidedactions_item_unpressed</item>
@@ -689,25 +689,25 @@
         <item name="guidedActionVerticalPadding">@dimen/lb_guidedactions_vertical_padding</item>
         <item name="guidedStepKeyline">@string/lb_guidedstep_keyline</item>
     </style>
-    <style name="Theme.Leanback.GuidedStep.Half" parent="Theme.Leanback.GuidedStep">
+    <style name="Theme.CouchPotato.GuidedStep.Half" parent="Theme.CouchPotato.GuidedStep">
       <item name="android:windowEnterTransition">@transition/lb_guidedstep_activity_enter_bottom</item>
       <item name="guidedStepHeightWeight">@string/lb_guidedstep_height_weight_translucent</item>
       <item name="android:windowIsTranslucent">true</item>
       <item name="android:windowBackground">@android:color/transparent</item>
     </style>
-    <style name="Theme.Leanback.GuidedStepBase" parent="Theme.LeanbackBase">
+    <style name="Theme.CouchPotato.GuidedStepBase" parent="Theme.LeanbackBase">
         <item name="guidedActionsSelectorDrawable">?android:attr/selectableItemBackground</item>
     </style>
-    <style name="Theme.Leanback.Onboarding" parent="Theme.LeanbackBase">
-        <item name="onboardingHeaderStyle">@style/Widget.Leanback.OnboardingHeaderStyle</item>
-        <item name="onboardingTitleStyle">@style/Widget.Leanback.OnboardingTitleStyle</item>
-        <item name="onboardingDescriptionStyle">@style/Widget.Leanback.OnboardingDescriptionStyle</item>
-        <item name="onboardingNavigatorContainerStyle">@style/Widget.Leanback.OnboardingNavigatorContainerStyle</item>
-        <item name="onboardingPageIndicatorStyle">@style/Widget.Leanback.OnboardingPageIndicatorStyle</item>
-        <item name="onboardingStartButtonStyle">@style/Widget.Leanback.OnboardingStartButtonStyle</item>
-        <item name="onboardingLogoStyle">@style/Widget.Leanback.OnboardingLogoStyle</item>
+    <style name="Theme.CouchPotato.Onboarding" parent="Theme.LeanbackBase">
+        <item name="onboardingHeaderStyle">@style/Widget.CouchPotato.OnboardingHeaderStyle</item>
+        <item name="onboardingTitleStyle">@style/Widget.CouchPotato.OnboardingTitleStyle</item>
+        <item name="onboardingDescriptionStyle">@style/Widget.CouchPotato.OnboardingDescriptionStyle</item>
+        <item name="onboardingNavigatorContainerStyle">@style/Widget.CouchPotato.OnboardingNavigatorContainerStyle</item>
+        <item name="onboardingPageIndicatorStyle">@style/Widget.CouchPotato.OnboardingPageIndicatorStyle</item>
+        <item name="onboardingStartButtonStyle">@style/Widget.CouchPotato.OnboardingStartButtonStyle</item>
+        <item name="onboardingLogoStyle">@style/Widget.CouchPotato.OnboardingLogoStyle</item>
     </style>
-    <style name="Theme.Leanback.VerticalGrid" parent="Theme.Leanback">
+    <style name="Theme.CouchPotato.VerticalGrid" parent="Theme.CouchPotato">
         <item name="android:windowEnterTransition">@transition/lb_vertical_grid_enter_transition</item>
         <item name="android:windowReturnTransition">@transition/lb_vertical_grid_return_transition</item>
     </style>
@@ -718,16 +718,16 @@
         <item name="defaultBrandColorDark">@color/lb_default_brand_color_dark</item>
 
         <item name="android:windowOverscan">true</item>
-        <item name="guidedStepTheme">@style/Theme.Leanback.GuidedStep</item>
+        <item name="guidedStepTheme">@style/Theme.CouchPotato.GuidedStep</item>
     </style>
-    <style name="Widget.Leanback" parent="Widget.LeanbackBase"/>
-    <style name="Widget.Leanback.BaseCardViewStyle">
+    <style name="Widget.CouchPotato" parent="Widget.LeanbackBase"/>
+    <style name="Widget.CouchPotato.BaseCardViewStyle">
         <item name="cardForeground">@drawable/lb_card_foreground</item>
         <item name="cardBackground">@color/lb_basic_card_bg_color</item>
     </style>
-    <style name="Widget.Leanback.DetailsActionButtonStyle" parent="Widget.Leanback.DetailsActionButtonStyleBase">
+    <style name="Widget.CouchPotato.DetailsActionButtonStyle" parent="Widget.CouchPotato.DetailsActionButtonStyleBase">
         <item name="android:textAlignment">viewStart</item>
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.DetailsActionButton</item>
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.DetailsActionButton</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:drawablePadding">@dimen/lb_action_icon_margin</item>
         <item name="android:focusable">true</item>
@@ -735,24 +735,24 @@
         <item name="android:paddingStart">@dimen/lb_action_padding_horizontal</item>
         <item name="android:paddingEnd">@dimen/lb_action_padding_horizontal</item>
     </style>
-    <style name="Widget.Leanback.DetailsActionButtonStyleBase" parent="android:Widget.Holo.Button.Borderless">
+    <style name="Widget.CouchPotato.DetailsActionButtonStyleBase" parent="android:Widget.Holo.Button.Borderless">
     </style>
-    <style name="Widget.Leanback.DetailsDescriptionBodyStyle">
+    <style name="Widget.CouchPotato.DetailsDescriptionBodyStyle">
         <item name="android:textAlignment">viewStart</item>
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.DetailsDescriptionBody</item>
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.DetailsDescriptionBody</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:ellipsize">end</item>
     </style>
-    <style name="Widget.Leanback.DetailsDescriptionSubtitleStyle">
+    <style name="Widget.CouchPotato.DetailsDescriptionSubtitleStyle">
         <item name="android:textAlignment">viewStart</item>
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.DetailsDescriptionSubtitle</item>
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.DetailsDescriptionSubtitle</item>
         <item name="android:maxLines">@integer/lb_details_description_subtitle_max_lines</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:ellipsize">end</item>
     </style>
-    <style name="Widget.Leanback.DetailsDescriptionTitleStyle">
+    <style name="Widget.CouchPotato.DetailsDescriptionTitleStyle">
         <item name="android:textAlignment">viewStart</item>
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.DetailsDescriptionTitle</item>
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.DetailsDescriptionTitle</item>
         <item name="android:maxLines">@integer/lb_details_description_title_max_lines</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:ellipsize">end</item>
@@ -761,15 +761,15 @@
         <item name="resizedPaddingAdjustmentTop">@dimen/lb_details_description_title_padding_adjust_top</item>
         <item name="resizedPaddingAdjustmentBottom">@dimen/lb_details_description_title_padding_adjust_bottom</item>
     </style>
-    <style name="Widget.Leanback.ErrorMessageStyle">
+    <style name="Widget.CouchPotato.ErrorMessageStyle">
         <item name="android:textAlignment">viewStart</item>
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.ErrorMessage</item>
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.ErrorMessage</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:maxLines">@integer/lb_error_message_max_lines</item>
         <item name="android:ellipsize">end</item>
     </style>
-    <style name="Widget.Leanback.GridItems"/>
-    <style name="Widget.Leanback.GridItems.VerticalGridView">
+    <style name="Widget.CouchPotato.GridItems"/>
+    <style name="Widget.CouchPotato.GridItems.VerticalGridView">
         <item name="android:focusable">true</item>
         <item name="android:focusableInTouchMode">true</item>
         <item name="android:paddingStart">?attr/browsePaddingStart</item>
@@ -781,7 +781,7 @@
         <item name="verticalMargin">@dimen/lb_browse_item_vertical_margin</item>
         <item name="focusOutFront">true</item>
     </style>
-    <style name="Widget.Leanback.GuidanceBreadcrumbStyle">
+    <style name="Widget.CouchPotato.GuidanceBreadcrumbStyle">
         <item name="android:importantForAccessibility">no</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -794,14 +794,14 @@
         <item name="android:gravity">start</item>
         <item name="android:textAlignment">viewStart</item>
     </style>
-    <style name="Widget.Leanback.GuidanceContainerStyle">
+    <style name="Widget.CouchPotato.GuidanceContainerStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:paddingStart">56dp</item>
         <item name="android:paddingEnd">32dp</item>
         <item name="android:clipToPadding">false</item>
     </style>
-    <style name="Widget.Leanback.GuidanceDescriptionStyle">
+    <style name="Widget.CouchPotato.GuidanceDescriptionStyle">
         <item name="android:importantForAccessibility">no</item>
         <item name="android:layout_below">@id/guidance_title</item>
         <item name="android:layout_toEndOf">@id/guidance_icon</item>
@@ -817,7 +817,7 @@
         <item name="android:lineSpacingExtra">3dp</item>
         <item name="android:textAlignment">viewStart</item>
     </style>
-    <style name="Widget.Leanback.GuidanceIconStyle">
+    <style name="Widget.CouchPotato.GuidanceIconStyle">
         <item name="android:layout_width">140dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentStart">true</item>
@@ -825,7 +825,7 @@
         <item name="android:maxHeight">280dp</item>
         <item name="android:scaleType">fitCenter</item>
     </style>
-    <style name="Widget.Leanback.GuidanceTitleStyle">
+    <style name="Widget.CouchPotato.GuidanceTitleStyle">
         <item name="android:importantForAccessibility">no</item>
         <item name="android:layout_below">@id/guidance_breadcrumb</item>
         <item name="android:layout_toEndOf">@id/guidance_icon</item>
@@ -842,7 +842,7 @@
         <item name="android:paddingBottom">4dp</item>
         <item name="android:paddingTop">2dp</item>
     </style>
-    <style name="Widget.Leanback.GuidedActionItemCheckmarkStyle">
+    <style name="Widget.CouchPotato.GuidedActionItemCheckmarkStyle">
         <item name="android:layout_width">@dimen/lb_guidedactions_item_checkmark_diameter</item>
         <item name="android:layout_height">@dimen/lb_guidedactions_item_checkmark_diameter</item>
         <item name="android:layout_gravity">center</item>
@@ -850,7 +850,7 @@
         <item name="android:scaleType">centerInside</item>
         <item name="android:visibility">gone</item>
     </style>
-    <style name="Widget.Leanback.GuidedActionItemChevronStyle">
+    <style name="Widget.CouchPotato.GuidedActionItemChevronStyle">
         <item name="android:layout_width">12dp</item>
         <item name="android:layout_height">12dp</item>
         <item name="android:layout_gravity">center</item>
@@ -859,7 +859,7 @@
         <item name="android:src">@drawable/lb_ic_guidedactions_item_chevron</item>
         <item name="android:visibility">gone</item>
     </style>
-    <style name="Widget.Leanback.GuidedActionItemContainerStyle">
+    <style name="Widget.CouchPotato.GuidedActionItemContainerStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:foreground">?attr/guidedActionsSelectorDrawable</item>
@@ -870,14 +870,14 @@
         <item name="android:paddingEnd">@dimen/lb_guidedactions_item_end_padding</item>
         <item name="android:paddingTop">@dimen/lb_guidedactions_item_top_padding</item>
     </style>
-    <style name="Widget.Leanback.GuidedActionItemContentStyle">
+    <style name="Widget.CouchPotato.GuidedActionItemContentStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">start|center_vertical</item>
         <item name="android:layout_weight">1</item>
         <item name="android:orientation">vertical</item>
     </style>
-    <style name="Widget.Leanback.GuidedActionItemDescriptionStyle">
+    <style name="Widget.CouchPotato.GuidedActionItemDescriptionStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:alpha">@string/lb_guidedactions_item_unselected_description_text_alpha</item>
@@ -890,7 +890,7 @@
         <item name="android:textAlignment">viewStart</item>
         <item name="android:visibility">gone</item>
     </style>
-    <style name="Widget.Leanback.GuidedActionItemIconStyle">
+    <style name="Widget.CouchPotato.GuidedActionItemIconStyle">
         <item name="android:layout_width">@dimen/lb_guidedactions_item_icon_width</item>
         <item name="android:layout_height">@dimen/lb_guidedactions_item_icon_height</item>
         <item name="android:layout_gravity">center</item>
@@ -898,7 +898,7 @@
         <item name="android:scaleType">fitCenter</item>
         <item name="android:visibility">gone</item>
     </style>
-    <style name="Widget.Leanback.GuidedActionItemTitleStyle">
+    <style name="Widget.CouchPotato.GuidedActionItemTitleStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:alpha">@string/lb_guidedactions_item_unselected_text_alpha</item>
@@ -909,8 +909,8 @@
         <item name="android:textSize">@dimen/lb_guidedactions_item_title_font_size</item>
         <item name="android:textAlignment">viewStart</item>
     </style>
-    <style name="Widget.Leanback.GuidedActionsContainerStyle"/>
-    <style name="Widget.Leanback.GuidedActionsListStyle">
+    <style name="Widget.CouchPotato.GuidedActionsContainerStyle"/>
+    <style name="Widget.CouchPotato.GuidedActionsListStyle">
         <item name="android:focusable">false</item>
         <item name="android:focusableInTouchMode">false</item>
         <item name="android:layout_width">match_parent</item>
@@ -921,31 +921,31 @@
         <item name="focusOutEnd">false</item>
         <item name="focusOutFront">false</item>
     </style>
-    <style name="Widget.Leanback.GuidedActionsSelectorStyle"/>
-    <style name="Widget.Leanback.GuidedButtonActionsListStyle" parent="Widget.Leanback.GuidedActionsListStyle">
+    <style name="Widget.CouchPotato.GuidedActionsSelectorStyle"/>
+    <style name="Widget.CouchPotato.GuidedButtonActionsListStyle" parent="Widget.CouchPotato.GuidedActionsListStyle">
     </style>
-    <style name="Widget.Leanback.GuidedSubActionsListStyle" parent="Widget.Leanback.GuidedActionsListStyle">
+    <style name="Widget.CouchPotato.GuidedSubActionsListStyle" parent="Widget.CouchPotato.GuidedActionsListStyle">
         <item name="android:focusable">true</item>
         <item name="android:focusableInTouchMode">true</item>
         <item name="focusOutSideStart">false</item>
         <item name="focusOutSideEnd">false</item>
         <item name="android:layout_marginBottom">@dimen/lb_guidedactions_sublist_bottom_margin</item>
     </style>
-    <style name="Widget.Leanback.Header">
+    <style name="Widget.CouchPotato.Header">
         <item name="android:minHeight">@dimen/lb_browse_header_height</item>
         <item name="android:minWidth">1dp</item>
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.Header</item>
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.Header</item>
         <item name="android:textAlignment">viewStart</item>
         <item name="android:singleLine">false</item>
         <item name="android:maxLines">2</item>
         <item name="android:ellipsize">none</item>
     </style>
-    <style name="Widget.Leanback.Header.Section">
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.Header.Section</item>
+    <style name="Widget.CouchPotato.Header.Section">
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.Header.Section</item>
         <item name="android:singleLine">true</item>
     </style>
-    <style name="Widget.Leanback.Headers"/>
-    <style name="Widget.Leanback.Headers.VerticalGridView">
+    <style name="Widget.CouchPotato.Headers"/>
+    <style name="Widget.CouchPotato.Headers.VerticalGridView">
         <item name="android:background">?attr/defaultBrandColor</item>
         <item name="android:paddingStart">?attr/browsePaddingStart</item>
         <item name="focusOutFront">true</item>
@@ -955,15 +955,15 @@
         <item name="android:focusableInTouchMode">true</item>
         <item name="android:contentDescription">@string/lb_navigation_menu_contentDescription</item>
     </style>
-    <style name="Widget.Leanback.ImageCardView"/>
-    <style name="Widget.Leanback.ImageCardView.BadgeStyle">
+    <style name="Widget.CouchPotato.ImageCardView"/>
+    <style name="Widget.CouchPotato.ImageCardView.BadgeStyle">
         <item name="android:id">@id/extra_badge</item>
         <item name="android:layout_width">@dimen/lb_basic_card_info_badge_size</item>
         <item name="android:layout_height">@dimen/lb_basic_card_info_badge_size</item>
         <item name="android:contentDescription">@null</item>
         <item name="android:scaleType">fitCenter</item>
     </style>
-    <style name="Widget.Leanback.ImageCardView.ContentStyle">
+    <style name="Widget.CouchPotato.ImageCardView.ContentStyle">
         <item name="android:id">@id/content_text</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -973,9 +973,9 @@
         <item name="android:maxLines">1</item>
         <item name="android:textAlignment">viewStart</item>
         <item name="android:ellipsize">end</item>
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.ImageCardView.Content</item>
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.ImageCardView.Content</item>
     </style>
-    <style name="Widget.Leanback.ImageCardView.ImageStyle">
+    <style name="Widget.CouchPotato.ImageCardView.ImageStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:adjustViewBounds">true</item>
@@ -983,7 +983,7 @@
         <item name="android:scaleType">centerCrop</item>
         <item name="layout_viewType">main</item>
     </style>
-    <style name="Widget.Leanback.ImageCardView.InfoAreaStyle">
+    <style name="Widget.CouchPotato.ImageCardView.InfoAreaStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerHorizontal">true</item>
@@ -994,7 +994,7 @@
         <item name="android:paddingTop">@dimen/lb_basic_card_info_padding_top</item>
         <item name="android:background">@color/lb_basic_card_info_bg_color</item>
     </style>
-    <style name="Widget.Leanback.ImageCardView.TitleStyle">
+    <style name="Widget.CouchPotato.ImageCardView.TitleStyle">
         <item name="android:id">@id/title_text</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -1002,17 +1002,17 @@
         <item name="android:layout_marginBottom">@dimen/lb_basic_card_info_text_margin</item>
         <item name="android:textAlignment">viewStart</item>
         <item name="android:ellipsize">end</item>
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.ImageCardView.Title</item>
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.ImageCardView.Title</item>
     </style>
-    <style name="Widget.Leanback.ImageCardViewStyle" parent="Widget.Leanback.BaseCardViewStyle">
+    <style name="Widget.CouchPotato.ImageCardViewStyle" parent="Widget.CouchPotato.BaseCardViewStyle">
         <item name="cardType">infoUnder</item>
         <item name="infoVisibility">activated</item>
         <!-- In order to keep backward compatibility we have to create an icon on right. -->
         <item name="lbImageCardViewType">Title|Content|IconOnRight</item>
-        <!-- Deprecated. Use 'Widget.Leanback.ImageCardView.InfoAreaStyle' instead. -->
+        <!-- Deprecated. Use 'Widget.CouchPotato.ImageCardView.InfoAreaStyle' instead. -->
         <item name="infoAreaBackground">@null</item>
     </style>
-    <style name="Widget.Leanback.OnboardingDescriptionStyle">
+    <style name="Widget.CouchPotato.OnboardingDescriptionStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_weight">0.5</item>
@@ -1023,7 +1023,7 @@
         <item name="android:textSize">14sp</item>
         <item name="android:lineSpacingExtra">10sp</item>
     </style>
-    <style name="Widget.Leanback.OnboardingHeaderStyle">
+    <style name="Widget.CouchPotato.OnboardingHeaderStyle">
         <item name="android:layout_width">@dimen/lb_onboarding_content_width</item>
         <item name="android:layout_height">@dimen/lb_onboarding_header_height</item>
         <item name="android:layout_alignParentTop">true</item>
@@ -1033,20 +1033,20 @@
         <item name="android:clipToPadding">false</item>
         <item name="android:orientation">vertical</item>
     </style>
-    <style name="Widget.Leanback.OnboardingLogoStyle">
+    <style name="Widget.CouchPotato.OnboardingLogoStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerInParent">true</item>
         <item name="android:contentDescription">@null</item>
     </style>
-    <style name="Widget.Leanback.OnboardingNavigatorContainerStyle">
+    <style name="Widget.CouchPotato.OnboardingNavigatorContainerStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">58dp</item>
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:layout_alignParentBottom">true</item>
     </style>
-    <style name="Widget.Leanback.OnboardingPageIndicatorStyle">
+    <style name="Widget.CouchPotato.OnboardingPageIndicatorStyle">
         <item name="android:layout_width">@dimen/lb_onboarding_content_width</item>
         <item name="android:layout_height">@dimen/lb_onboarding_navigation_height</item>
         <item name="android:layout_gravity">center_horizontal</item>
@@ -1059,7 +1059,7 @@
         <item name="dotBgColor">@color/lb_page_indicator_dot</item>
         <item name="arrowBgColor">@color/lb_page_indicator_arrow_background</item>
     </style>
-    <style name="Widget.Leanback.OnboardingStartButtonStyle">
+    <style name="Widget.CouchPotato.OnboardingStartButtonStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">36dp</item>
         <item name="android:layout_gravity">center_horizontal</item>
@@ -1076,7 +1076,7 @@
         <item name="android:textColor">#014269</item>
         <item name="android:textSize">16sp</item>
     </style>
-    <style name="Widget.Leanback.OnboardingTitleStyle">
+    <style name="Widget.CouchPotato.OnboardingTitleStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_weight">0.5</item>
@@ -1087,11 +1087,11 @@
         <item name="android:textSize">34sp</item>
         <item name="android:lineSpacingExtra">14sp</item>
     </style>
-    <style name="Widget.Leanback.PlaybackControlLabelStyle">
+    <style name="Widget.CouchPotato.PlaybackControlLabelStyle">
         <item name="android:textAlignment">viewStart</item>
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.PlaybackControlLabel</item>
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.PlaybackControlLabel</item>
     </style>
-    <style name="Widget.Leanback.PlaybackControlsActionIconsStyle">
+    <style name="Widget.CouchPotato.PlaybackControlsActionIconsStyle">
         <item name="play">@drawable/lb_ic_play</item>
         <item name="pause">@drawable/lb_ic_pause</item>
         <item name="fast_forward">@drawable/lb_ic_fast_forward</item>
@@ -1109,15 +1109,15 @@
         <item name="closed_captioning">@drawable/lb_ic_cc</item>
         <item name="picture_in_picture">@drawable/lb_ic_pip</item>
     </style>
-    <style name="Widget.Leanback.PlaybackControlsButtonStyle">
+    <style name="Widget.CouchPotato.PlaybackControlsButtonStyle">
         <item name="android:focusable">true</item>
         <item name="android:focusableInTouchMode">true</item>
     </style>
-    <style name="Widget.Leanback.PlaybackControlsTimeStyle">
+    <style name="Widget.CouchPotato.PlaybackControlsTimeStyle">
         <item name="android:textAlignment">viewStart</item>
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.PlaybackControlsTime</item>
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.PlaybackControlsTime</item>
     </style>
-    <style name="Widget.Leanback.PlaybackMediaItemDetailsStyle">
+    <style name="Widget.CouchPotato.PlaybackMediaItemDetailsStyle">
         <item name="android:paddingStart">?attr/playbackMediaItemPaddingStart</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
@@ -1125,59 +1125,59 @@
         <item name="android:focusable">true</item>
         <item name="android:focusableInTouchMode">true</item>
     </style>
-    <style name="Widget.Leanback.PlaybackMediaItemDurationStyle">
+    <style name="Widget.CouchPotato.PlaybackMediaItemDurationStyle">
         <item name="android:layout_width">56dp</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:singleLine">true</item>
         <item name="android:gravity">center_vertical|right</item>
         <item name="android:visibility">gone</item>
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.PlaybackMediaItemDuration</item>
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.PlaybackMediaItemDuration</item>
     </style>
-    <style name="Widget.Leanback.PlaybackMediaItemNameStyle">
+    <style name="Widget.CouchPotato.PlaybackMediaItemNameStyle">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:singleLine">true</item>
         <item name="android:gravity">center_vertical</item>"
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.PlaybackMediaItemName</item>
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.PlaybackMediaItemName</item>
     </style>
-    <style name="Widget.Leanback.PlaybackMediaItemNumberStyle">
+    <style name="Widget.CouchPotato.PlaybackMediaItemNumberStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:visibility">gone</item>
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.PlaybackMediaItemNumber</item>
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.PlaybackMediaItemNumber</item>
     </style>
-    <style name="Widget.Leanback.PlaybackMediaItemNumberViewFlipperStyle">
+    <style name="Widget.CouchPotato.PlaybackMediaItemNumberViewFlipperStyle">
         <item name="android:layout_width">56dp</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:visibility">gone</item>
     </style>
-    <style name="Widget.Leanback.PlaybackMediaItemRowStyle" parent="Widget.Leanback.PlaybackRow">
+    <style name="Widget.CouchPotato.PlaybackMediaItemRowStyle" parent="Widget.CouchPotato.PlaybackRow">
         <item name="android:focusable">false</item>
         <item name="android:focusableInTouchMode">false</item>
     </style>
-    <style name="Widget.Leanback.PlaybackMediaItemSeparatorStyle" parent="Widget.Leanback.PlaybackRow">
+    <style name="Widget.CouchPotato.PlaybackMediaItemSeparatorStyle" parent="Widget.CouchPotato.PlaybackRow">
         <item name="android:background">@color/lb_media_background_color</item>
         <item name="android:src">@color/lb_playback_media_row_separator_highlight_color</item>
         <item name="android:layout_height">@dimen/lb_playback_media_row_separator_height</item>"
     </style>
-    <style name="Widget.Leanback.PlaybackMediaListHeaderStyle" parent="Widget.Leanback.PlaybackRow">
+    <style name="Widget.CouchPotato.PlaybackMediaListHeaderStyle" parent="Widget.CouchPotato.PlaybackRow">
         <item name="android:background">#263238</item>
         <item name="android:focusable">false</item>
         <item name="android:focusableInTouchMode">false</item>
     </style>
-    <style name="Widget.Leanback.PlaybackMediaListHeaderTitleStyle">
+    <style name="Widget.CouchPotato.PlaybackMediaListHeaderTitleStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_alignParentStart">true</item>
         <item name="android:layout_alignParentTop">true</item>
         <item name="android:gravity">center_vertical</item>"
         <item name="android:paddingLeft">?attr/playbackMediaItemPaddingStart</item>
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.PlaybackMediaListHeaderTitle</item>
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.PlaybackMediaListHeaderTitle</item>
     </style>
-    <style name="Widget.Leanback.PlaybackRow">
+    <style name="Widget.CouchPotato.PlaybackRow">
         <item name="android:layout_marginStart">?attr/playbackPaddingStart</item>
         <item name="android:layout_marginEnd">?attr/playbackPaddingEnd</item>
         <item name="android:clipChildren">true</item>
@@ -1187,15 +1187,15 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">48dp</item>
     </style>
-    <style name="Widget.Leanback.Row">
+    <style name="Widget.CouchPotato.Row">
     </style>
-    <style name="Widget.Leanback.Row.Header" parent="Widget.Leanback.Header">
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.Row.Header</item>
+    <style name="Widget.CouchPotato.Row.Header" parent="Widget.CouchPotato.Header">
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.Row.Header</item>
     </style>
-    <style name="Widget.Leanback.Row.HeaderDock">
+    <style name="Widget.CouchPotato.Row.HeaderDock">
         <item name="android:paddingStart">?attr/browsePaddingStart</item>
     </style>
-    <style name="Widget.Leanback.Row.HorizontalGridView">
+    <style name="Widget.CouchPotato.Row.HorizontalGridView">
         <item name="android:focusable">true</item>
         <item name="android:focusableInTouchMode">true</item>
         <item name="android:paddingStart">?attr/browsePaddingStart</item>
@@ -1206,46 +1206,46 @@
         <item name="verticalMargin">@dimen/lb_browse_item_vertical_margin</item>
         <item name="focusOutFront">true</item>
     </style>
-    <style name="Widget.Leanback.Row.HoverCardDescription">
+    <style name="Widget.CouchPotato.Row.HoverCardDescription">
         <item name="android:textAlignment">viewStart</item>
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.Row.HoverCardDescription</item>
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.Row.HoverCardDescription</item>
         <item name="android:maxWidth">@dimen/lb_browse_row_hovercard_max_width</item>
         <item name="android:ellipsize">end</item>
         <item name="android:maxLines">4</item>
     </style>
-    <style name="Widget.Leanback.Row.HoverCardTitle">
+    <style name="Widget.CouchPotato.Row.HoverCardTitle">
         <item name="android:textAlignment">viewStart</item>
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.Row.HoverCardTitle</item>
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.Row.HoverCardTitle</item>
         <item name="android:maxWidth">@dimen/lb_browse_row_hovercard_max_width</item>
         <item name="android:singleLine">true</item>
         <item name="android:ellipsize">end</item>
     </style>
-    <style name="Widget.Leanback.Rows">
+    <style name="Widget.CouchPotato.Rows">
     </style>
-    <style name="Widget.Leanback.Rows.VerticalGridView">
+    <style name="Widget.CouchPotato.Rows.VerticalGridView">
         <item name="android:paddingBottom">?attr/browsePaddingBottom</item>
         <item name="focusOutFront">true</item>
         <item name="focusOutEnd">true</item>
         <item name="android:focusable">true</item>
         <item name="android:focusableInTouchMode">true</item>
     </style>
-    <style name="Widget.Leanback.SearchOrbViewStyle">
+    <style name="Widget.CouchPotato.SearchOrbViewStyle">
         <item name="searchOrbIcon">?attr/defaultSearchIcon</item>
         <item name="searchOrbColor">?attr/defaultSearchColor</item>
         <item name="searchOrbIconColor">?attr/defaultSearchIconColor</item>
         <item name="searchOrbBrightColor">?attr/defaultSearchBrightColor</item>
     </style>
-    <style name="Widget.Leanback.Title"/>
-    <style name="Widget.Leanback.Title.Icon">
+    <style name="Widget.CouchPotato.Title"/>
+    <style name="Widget.CouchPotato.Title.Icon">
     </style>
-    <style name="Widget.Leanback.Title.Text">
+    <style name="Widget.CouchPotato.Title.Text">
         <item name="android:singleLine">true</item>
         <item name="android:gravity">end</item>
         <item name="android:ellipsize">end</item>
         <item name="android:textAlignment">viewStart</item>
-        <item name="android:textAppearance">@style/TextAppearance.Leanback.Title</item>
+        <item name="android:textAppearance">@style/TextAppearance.CouchPotato.Title</item>
     </style>
-    <style name="Widget.Leanback.TitleView">
+    <style name="Widget.CouchPotato.TitleView">
         <item name="android:paddingTop">?attr/browsePaddingTop</item>
         <item name="android:paddingBottom">?attr/browsePaddingTop</item>
         <item name="android:paddingStart">?attr/browsePaddingStart</item>

@@ -7,6 +7,6 @@
         <item name="defaultBrandColorDark">@color/lb_default_brand_color_dark</item>
 
         <item name="android:windowOverscan">true</item>
-        <item name="guidedStepTheme">@style/Theme.Leanback.GuidedStep</item>
+        <item name="guidedStepTheme">@style/Theme.CouchPotato.GuidedStep</item>
     </style>
 </resources>

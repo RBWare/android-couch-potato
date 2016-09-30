@@ -44,7 +44,7 @@ public class SearchEditText extends StreamingTextView {
     }
 
     public SearchEditText(Context context, AttributeSet attrs) {
-        this(context, attrs, R.style.TextAppearance_Leanback_SearchTextEdit);
+        this(context, attrs, R.style.TextAppearance_CouchPotato_SearchTextEdit);
     }
 
     public SearchEditText(Context context, AttributeSet attrs, int defStyle) {
