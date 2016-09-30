@@ -44,11 +44,11 @@ import java.util.List;
  * @hide
  */
 public class GuidedActionAdapter extends RecyclerView.Adapter {
-    private static final String TAG = "GuidedActionAdapter";
-    private static final boolean DEBUG = false;
+    static final String TAG = "GuidedActionAdapter";
+    static final boolean DEBUG = false;
 
-    private static final String TAG_EDIT = "EditableAction";
-    private static final boolean DEBUG_EDIT = false;
+    static final String TAG_EDIT = "EditableAction";
+    static final boolean DEBUG_EDIT = false;
 
     /**
      * Object listening for click events within a {@link GuidedActionAdapter}.
@@ -81,7 +81,12 @@ public class GuidedActionAdapter extends RecyclerView.Adapter {
         /**
          * Called when the user exits edit mode on an action.
          */
-        public long onGuidedActionEdited(GuidedAction action);
+        public void onGuidedActionEditCanceled(GuidedAction action);
+
+        /**
+         * Called when the user exits edit mode on an action and process confirm button in IME.
+         */
+        public long onGuidedActionEditedAndProceed(GuidedAction action);
 
         /**
          * Called when Ime Open
@@ -100,7 +105,7 @@ public class GuidedActionAdapter extends RecyclerView.Adapter {
     private final ActionEditListener mActionEditListener;
     private final List<GuidedAction> mActions;
     private ClickListener mClickListener;
-    private final GuidedActionsStylist mStylist;
+    final GuidedActionsStylist mStylist;
     private final View.OnClickListener mOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -222,7 +227,7 @@ public class GuidedActionAdapter extends RecyclerView.Adapter {
         return mStylist.getItemViewType(mActions.get(position));
     }
 
-    private RecyclerView getRecyclerView() {
+    RecyclerView getRecyclerView() {
         return mIsSubAdapter ? mStylist.getSubActionsGridView() : mStylist.getActionsGridView();
     }
 
@@ -385,6 +390,9 @@ public class GuidedActionAdapter extends RecyclerView.Adapter {
 
         private boolean mKeyPressed = false;
 
+        ActionOnKeyListener() {
+        }
+
         /**
          * Now only handles KEYCODE_ENTER and KEYCODE_NUMPAD_ENTER key event.
          */
@@ -449,6 +457,9 @@ public class GuidedActionAdapter extends RecyclerView.Adapter {
     private class ActionEditListener implements OnEditorActionListener,
             ImeKeyMonitor.ImeKeyListener {
 
+        ActionEditListener() {
+        }
+
         @Override
         public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
             if (DEBUG_EDIT) Log.v(TAG_EDIT, "IME action: " + actionId);
@@ -471,9 +482,11 @@ public class GuidedActionAdapter extends RecyclerView.Adapter {
             if (DEBUG_EDIT) Log.v(TAG_EDIT, "IME key: " + keyCode);
             if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
                 mGroup.fillAndStay(GuidedActionAdapter.this, editText);
+                return true;
             } else if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() ==
                     KeyEvent.ACTION_UP) {
                 mGroup.fillAndGoNext(GuidedActionAdapter.this, editText);
+                return true;
             }
             return false;
         }

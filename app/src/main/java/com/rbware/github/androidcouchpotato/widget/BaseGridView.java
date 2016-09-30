@@ -187,7 +187,7 @@ abstract class BaseGridView extends RecyclerView {
     private OnTouchInterceptListener mOnTouchInterceptListener;
     private OnMotionInterceptListener mOnMotionInterceptListener;
     private OnKeyInterceptListener mOnKeyInterceptListener;
-    private RecyclerView.RecyclerListener mChainedRecyclerListener;
+    RecyclerView.RecyclerListener mChainedRecyclerListener;
     private OnUnhandledKeyListener mOnUnhandledKeyListener;
 
     public BaseGridView(Context context, AttributeSet attrs, int defStyle) {
@@ -328,7 +328,7 @@ abstract class BaseGridView extends RecyclerView {
      * Returns the offset percent for window alignment in addition to
      * {@link #getWindowAlignmentOffset()}.
      *
-     * @return Percentage to offset. E.g., 40 means 40% of the width from the 
+     * @return Percentage to offset. E.g., 40 means 40% of the width from the
      *         low edge, or {@link #WINDOW_ALIGN_OFFSET_PERCENT_DISABLED} if
      *         disabled. Default value is 50.
      */
@@ -525,14 +525,14 @@ abstract class BaseGridView extends RecyclerView {
      * Changes the selected item immediately without animation.
      */
     public void setSelectedPosition(int position) {
-        mLayoutManager.setSelection(this, position, 0);
+        mLayoutManager.setSelection(position, 0);
     }
 
     /**
      * Changes the selected item and/or subposition immediately without animation.
      */
     public void setSelectedPositionWithSub(int position, int subposition) {
-        mLayoutManager.setSelectionWithSub(this, position, subposition, 0);
+        mLayoutManager.setSelectionWithSub(position, subposition, 0);
     }
 
     /**
@@ -541,7 +541,7 @@ abstract class BaseGridView extends RecyclerView {
      * another {@link #setSelectedPosition} or {@link #setSelectedPositionSmooth} call.
      */
     public void setSelectedPosition(int position, int scrollExtra) {
-        mLayoutManager.setSelection(this, position, scrollExtra);
+        mLayoutManager.setSelection(position, scrollExtra);
     }
 
     /**
@@ -550,7 +550,7 @@ abstract class BaseGridView extends RecyclerView {
      * another {@link #setSelectedPosition} or {@link #setSelectedPositionSmooth} call.
      */
     public void setSelectedPositionWithSub(int position, int subposition, int scrollExtra) {
-        mLayoutManager.setSelectionWithSub(this, position, subposition, scrollExtra);
+        mLayoutManager.setSelectionWithSub(position, subposition, scrollExtra);
     }
 
     /**
@@ -558,7 +558,7 @@ abstract class BaseGridView extends RecyclerView {
      * position.
      */
     public void setSelectedPositionSmooth(int position) {
-        mLayoutManager.setSelectionSmooth(this, position);
+        mLayoutManager.setSelectionSmooth(position);
     }
 
     /**
@@ -566,7 +566,7 @@ abstract class BaseGridView extends RecyclerView {
      * position.
      */
     public void setSelectedPositionSmoothWithSub(int position, int subposition) {
-        mLayoutManager.setSelectionSmoothWithSub(this, position, subposition);
+        mLayoutManager.setSelectionSmoothWithSub(position, subposition);
     }
 
     /**
@@ -577,8 +577,9 @@ abstract class BaseGridView extends RecyclerView {
     public void setSelectedPositionSmooth(final int position, final ViewHolderTask task) {
         if (task != null) {
             RecyclerView.ViewHolder vh = findViewHolderForPosition(position);
-            if (vh == null) {
+            if (vh == null || hasPendingAdapterUpdates()) {
                 addOnChildViewHolderSelectedListener(new OnChildViewHolderSelectedListener() {
+                    @Override
                     public void onChildViewHolderSelected(RecyclerView parent,
                             RecyclerView.ViewHolder child, int selectedPosition, int subposition) {
                         if (selectedPosition == position) {
@@ -602,8 +603,9 @@ abstract class BaseGridView extends RecyclerView {
     public void setSelectedPosition(final int position, final ViewHolderTask task) {
         if (task != null) {
             RecyclerView.ViewHolder vh = findViewHolderForPosition(position);
-            if (vh == null) {
+            if (vh == null || hasPendingAdapterUpdates()) {
                 addOnChildViewHolderSelectedListener(new OnChildViewHolderSelectedListener() {
+                    @Override
                     public void onChildViewHolderSelected(RecyclerView parent,
                             RecyclerView.ViewHolder child, int selectedPosition, int subposition) {
                         if (selectedPosition == position) {

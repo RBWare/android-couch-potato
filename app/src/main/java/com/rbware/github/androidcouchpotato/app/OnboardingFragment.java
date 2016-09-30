@@ -79,7 +79,7 @@ import java.util.List;
  * </ul>
  * <p>
  * Note that the information is used in {@link #onCreateView}, so should be initialized before
- * calling {@code super.onCreateView} or in {@link Fragment#onAttach(android.app.Activity)}.
+ * calling {@code super.onCreateView}.
  * <p>
  * <h3>Animation</h3>
  * Onboarding screen has three kinds of animations:
@@ -135,7 +135,14 @@ import java.util.List;
  * the Activity's theme. (Themes whose parent theme is already set to the onboarding theme do not
  * need to set the onboardingTheme attribute; if set, it will be ignored.)
  *
- * @hide
+ * @attr ref R.styleable#LeanbackOnboardingTheme_onboardingTheme
+ * @attr ref R.styleable#LeanbackOnboardingTheme_onboardingHeaderStyle
+ * @attr ref R.styleable#LeanbackOnboardingTheme_onboardingTitleStyle
+ * @attr ref R.styleable#LeanbackOnboardingTheme_onboardingDescriptionStyle
+ * @attr ref R.styleable#LeanbackOnboardingTheme_onboardingNavigatorContainerStyle
+ * @attr ref R.styleable#LeanbackOnboardingTheme_onboardingPageIndicatorStyle
+ * @attr ref R.styleable#LeanbackOnboardingTheme_onboardingStartButtonStyle
+ * @attr ref R.styleable#LeanbackOnboardingTheme_onboardingLogoStyle
  */
 abstract public class OnboardingFragment extends Fragment {
     private static final String TAG = "OnboardingFragment";
@@ -161,19 +168,19 @@ abstract public class OnboardingFragment extends Fragment {
 
     private ContextThemeWrapper mThemeWrapper;
 
-    private PagingIndicator mPageIndicator;
-    private View mStartButton;
+    PagingIndicator mPageIndicator;
+    View mStartButton;
     private ImageView mLogoView;
-    private TextView mTitleView;
-    private TextView mDescriptionView;
+    TextView mTitleView;
+    TextView mDescriptionView;
 
-    private boolean mIsLtr;
+    boolean mIsLtr;
 
     // No need to save/restore the logo resource ID, because the logo animation will not appear when
     // the fragment is restored.
     private int mLogoResourceId;
-    private boolean mEnterTransitionFinished;
-    private int mCurrentPageIndex;
+    boolean mEnterTransitionFinished;
+    int mCurrentPageIndex;
 
     private AnimatorSet mAnimator;
 
@@ -228,13 +235,13 @@ abstract public class OnboardingFragment extends Fragment {
         }
     };
 
-    private void moveToPreviousPage() {
+    void moveToPreviousPage() {
         if (mCurrentPageIndex > 0) {
             --mCurrentPageIndex;
             onPageChangedInternal(mCurrentPageIndex + 1);
         }
     }
-    private void moveToNextPage() {
+    void moveToNextPage() {
         if (mCurrentPageIndex < getPageCount() - 1) {
             ++mCurrentPageIndex;
             onPageChangedInternal(mCurrentPageIndex - 1);
@@ -247,7 +254,7 @@ abstract public class OnboardingFragment extends Fragment {
             Bundle savedInstanceState) {
         resolveTheme();
         LayoutInflater localInflater = getThemeInflater(inflater);
-        ViewGroup view = (ViewGroup) localInflater.inflate(R.layout.lb_onboarding_fragment,
+        final ViewGroup view = (ViewGroup) localInflater.inflate(R.layout.lb_onboarding_fragment,
                 container, false);
         mIsLtr = getResources().getConfiguration().getLayoutDirection()
                 == View.LAYOUT_DIRECTION_LTR;
@@ -268,10 +275,10 @@ abstract public class OnboardingFragment extends Fragment {
             mCurrentPageIndex = 0;
             mEnterTransitionFinished = false;
             mPageIndicator.onPageSelected(0, false);
-            container.getViewTreeObserver().addOnPreDrawListener(new OnPreDrawListener() {
+            view.getViewTreeObserver().addOnPreDrawListener(new OnPreDrawListener() {
                 @Override
                 public boolean onPreDraw() {
-                    container.getViewTreeObserver().removeOnPreDrawListener(this);
+                    view.getViewTreeObserver().removeOnPreDrawListener(this);
                     if (!startLogoAnimation()) {
                         startEnterAnimation();
                     }
@@ -358,7 +365,7 @@ abstract public class OnboardingFragment extends Fragment {
         return null;
     }
 
-    private boolean startLogoAnimation() {
+    boolean startLogoAnimation() {
         Animator animator = null;
         if (mLogoResourceId != 0) {
             mLogoView.setVisibility(View.VISIBLE);
@@ -442,7 +449,7 @@ abstract public class OnboardingFragment extends Fragment {
         mDescriptionView.setText(getPageDescription(mCurrentPageIndex));
     }
 
-    private void startEnterAnimation() {
+    void startEnterAnimation() {
         mEnterTransitionFinished = true;
         initializeViews(getView());
         List<Animator> animators = new ArrayList<>();
@@ -492,7 +499,7 @@ abstract public class OnboardingFragment extends Fragment {
      *
      * @return The title of the page.
      */
-    abstract protected String getPageTitle(int pageIndex);
+    abstract protected CharSequence getPageTitle(int pageIndex);
 
     /**
      * Returns the description of the given page.
@@ -501,7 +508,7 @@ abstract public class OnboardingFragment extends Fragment {
      *
      * @return The description of the page.
      */
-    abstract protected String getPageDescription(int pageIndex);
+    abstract protected CharSequence getPageDescription(int pageIndex);
 
     /**
      * Returns the index of the current page.
@@ -609,22 +616,23 @@ abstract public class OnboardingFragment extends Fragment {
             Animator navigatorFadeOutAnimator = AnimatorInflater.loadAnimator(getActivity(),
                     R.animator.lb_onboarding_page_indicator_fade_out);
             navigatorFadeOutAnimator.setTarget(mPageIndicator);
-            Animator buttonFadeInAnimator = AnimatorInflater.loadAnimator(getActivity(),
-                    R.animator.lb_onboarding_start_button_fade_in);
-            buttonFadeInAnimator.setTarget(mStartButton);
-            animators.add(navigatorFadeOutAnimator);
             navigatorFadeOutAnimator.addListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     mPageIndicator.setVisibility(View.GONE);
                 }
             });
+            animators.add(navigatorFadeOutAnimator);
+            Animator buttonFadeInAnimator = AnimatorInflater.loadAnimator(getActivity(),
+                    R.animator.lb_onboarding_start_button_fade_in);
+            buttonFadeInAnimator.setTarget(mStartButton);
             animators.add(buttonFadeInAnimator);
         } else if (previousPage == getPageCount() - 1) {
             mPageIndicator.setVisibility(View.VISIBLE);
             Animator navigatorFadeInAnimator = AnimatorInflater.loadAnimator(getActivity(),
                     R.animator.lb_onboarding_page_indicator_fade_in);
             navigatorFadeInAnimator.setTarget(mPageIndicator);
+            animators.add(navigatorFadeInAnimator);
             Animator buttonFadeOutAnimator = AnimatorInflater.loadAnimator(getActivity(),
                     R.animator.lb_onboarding_start_button_fade_out);
             buttonFadeOutAnimator.setTarget(mStartButton);
@@ -634,9 +642,7 @@ abstract public class OnboardingFragment extends Fragment {
                     mStartButton.setVisibility(View.GONE);
                 }
             });
-            mAnimator = new AnimatorSet();
-            mAnimator.playTogether(navigatorFadeInAnimator, buttonFadeOutAnimator);
-            mAnimator.start();
+            animators.add(buttonFadeOutAnimator);
         }
         mAnimator = new AnimatorSet();
         mAnimator.playTogether(animators);

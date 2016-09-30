@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="android.support.v17.leanback">
+          package="com.rbware.github.androidcouchpotato">
     <uses-sdk android:minSdkVersion="14"/>
     <application />
 </manifest>

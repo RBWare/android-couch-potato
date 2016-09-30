@@ -19,13 +19,14 @@ import android.view.KeyEvent;
 
 import java.util.ArrayList;
 
-import static com.rbware.github.androidcouchpotato.widget.ObjectAdapter.NO_ID;
-
 /**
  * An action contains one or two lines of text, an optional image and an optional id. It may also
  * be invoked by one or more keycodes.
  */
 public class Action {
+
+    /** Indicates that an id has not been set. */
+    public static final long NO_ID = -1;
 
     private long mId = NO_ID;
     private Drawable mIcon;

@@ -18,22 +18,20 @@ package com.rbware.github.androidcouchpotato.app;
 import com.rbware.github.androidcouchpotato.R;
 import com.rbware.github.androidcouchpotato.transition.TransitionHelper;
 import com.rbware.github.androidcouchpotato.widget.BrowseFrameLayout;
-import com.rbware.github.androidcouchpotato.widget.DetailsOverviewRow;
 import com.rbware.github.androidcouchpotato.widget.FullWidthDetailsOverviewRowPresenter;
 import com.rbware.github.androidcouchpotato.widget.ItemAlignmentFacet;
 import com.rbware.github.androidcouchpotato.widget.ItemBridgeAdapter;
 import com.rbware.github.androidcouchpotato.widget.ObjectAdapter;
-import com.rbware.github.androidcouchpotato.widget.OnItemViewClickedListener;
-import com.rbware.github.androidcouchpotato.widget.OnItemViewSelectedListener;
+import com.rbware.github.androidcouchpotato.widget.BaseOnItemViewClickedListener;
+import com.rbware.github.androidcouchpotato.widget.BaseOnItemViewSelectedListener;
 import com.rbware.github.androidcouchpotato.widget.Presenter;
 import com.rbware.github.androidcouchpotato.widget.PresenterSelector;
-import com.rbware.github.androidcouchpotato.widget.Row;
 import com.rbware.github.androidcouchpotato.widget.RowPresenter;
 import com.rbware.github.androidcouchpotato.widget.TitleHelper;
-import com.rbware.github.androidcouchpotato.widget.TitleView;
 import com.rbware.github.androidcouchpotato.widget.VerticalGridView;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,8 +41,7 @@ import android.view.ViewGroup;
  *
  * <p>
  * A DetailsSupportFragment renders the elements of its {@link ObjectAdapter} as a set
- * of rows in a vertical list. The elements in this adapter must be subclasses
- * of {@link Row}, the Adapter's {@link PresenterSelector} must maintains subclasses
+ * of rows in a vertical list.The Adapter's {@link PresenterSelector} must maintain subclasses
  * of {@link RowPresenter}.
  * </p>
  *
@@ -74,12 +71,15 @@ import android.view.ViewGroup;
  * </p>
  */
 public class DetailsSupportFragment extends BaseSupportFragment {
-    private static final String TAG = "DetailsSupportFragment";
-    private static boolean DEBUG = false;
+    static final String TAG = "DetailsSupportFragment";
+    static boolean DEBUG = false;
 
     private class SetSelectionRunnable implements Runnable {
         int mPosition;
         boolean mSmooth = true;
+
+        SetSelectionRunnable() {
+        }
 
         @Override
         public void run() {
@@ -90,22 +90,22 @@ public class DetailsSupportFragment extends BaseSupportFragment {
         }
     }
 
-    private RowsSupportFragment mRowsSupportFragment;
+    RowsSupportFragment mRowsSupportFragment;
 
     private ObjectAdapter mAdapter;
     private int mContainerListAlignTop;
-    private OnItemViewSelectedListener mExternalOnItemViewSelectedListener;
-    private OnItemViewClickedListener mOnItemViewClickedListener;
+    BaseOnItemViewSelectedListener mExternalOnItemViewSelectedListener;
+    private BaseOnItemViewClickedListener mOnItemViewClickedListener;
 
     private Object mSceneAfterEntranceTransition;
 
     private final SetSelectionRunnable mSetSelectionRunnable = new SetSelectionRunnable();
 
-    private final OnItemViewSelectedListener mOnItemViewSelectedListener =
-            new OnItemViewSelectedListener() {
+    private final BaseOnItemViewSelectedListener<Object> mOnItemViewSelectedListener =
+            new BaseOnItemViewSelectedListener<Object>() {
         @Override
         public void onItemSelected(Presenter.ViewHolder itemViewHolder, Object item,
-                                   RowPresenter.ViewHolder rowViewHolder, Row row) {
+                                   RowPresenter.ViewHolder rowViewHolder, Object row) {
             int position = mRowsSupportFragment.getVerticalGridView().getSelectedPosition();
             int subposition = mRowsSupportFragment.getVerticalGridView().getSelectedSubPosition();
             if (DEBUG) Log.v(TAG, "row selected position " + position
@@ -146,14 +146,14 @@ public class DetailsSupportFragment extends BaseSupportFragment {
     /**
      * Sets an item selection listener.
      */
-    public void setOnItemViewSelectedListener(OnItemViewSelectedListener listener) {
+    public void setOnItemViewSelectedListener(BaseOnItemViewSelectedListener listener) {
         mExternalOnItemViewSelectedListener = listener;
     }
 
     /**
      * Sets an item clicked listener.
      */
-    public void setOnItemViewClickedListener(OnItemViewClickedListener listener) {
+    public void setOnItemViewClickedListener(BaseOnItemViewClickedListener listener) {
         if (mOnItemViewClickedListener != listener) {
             mOnItemViewClickedListener = listener;
             if (mRowsSupportFragment != null) {
@@ -165,7 +165,7 @@ public class DetailsSupportFragment extends BaseSupportFragment {
     /**
      * Returns the item clicked listener.
      */
-    public OnItemViewClickedListener getOnItemViewClickedListener() {
+    public BaseOnItemViewClickedListener getOnItemViewClickedListener() {
         return mOnItemViewClickedListener;
     }
 
@@ -182,10 +182,7 @@ public class DetailsSupportFragment extends BaseSupportFragment {
             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.lb_details_fragment, container, false);
         ViewGroup fragment_root = (ViewGroup) view.findViewById(R.id.details_fragment_root);
-        View titleView = inflateTitle(inflater, fragment_root, savedInstanceState);
-        if (titleView != null) {
-            fragment_root.addView(titleView);
-        }
+        installTitleView(inflater, fragment_root, savedInstanceState);
         mRowsSupportFragment = (RowsSupportFragment) getChildFragmentManager().findFragmentById(
                 R.id.details_rows_dock);
         if (mRowsSupportFragment == null) {
@@ -196,15 +193,6 @@ public class DetailsSupportFragment extends BaseSupportFragment {
         mRowsSupportFragment.setAdapter(mAdapter);
         mRowsSupportFragment.setOnItemViewSelectedListener(mOnItemViewSelectedListener);
         mRowsSupportFragment.setOnItemViewClickedListener(mOnItemViewClickedListener);
-
-        if (titleView != null) {
-            View titleGroup = titleView.findViewById(R.id.browse_title_group);
-            if (titleGroup instanceof TitleView) {
-                setTitleView((TitleView) titleGroup);
-            } else {
-                setTitleView(null);
-            }
-        }
 
         mSceneAfterEntranceTransition = TransitionHelper.createScene(
                 (ViewGroup) view, new Runnable() {
@@ -217,13 +205,18 @@ public class DetailsSupportFragment extends BaseSupportFragment {
     }
 
     /**
-     * Called by {@link #onCreateView(LayoutInflater, ViewGroup, Bundle)} to inflate
-     * TitleView.  Default implementation uses layout file lb_browse_title.
-     * Subclass may override and use its own layout or return null if no title is needed.
+     * @deprecated override {@link #onInflateTitleView(LayoutInflater,ViewGroup,Bundle)} instead.
      */
+    @Deprecated
     protected View inflateTitle(LayoutInflater inflater, ViewGroup parent,
             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.lb_browse_title, parent, false);
+        return super.onInflateTitleView(inflater, parent, savedInstanceState);
+    }
+
+    @Override
+    public View onInflateTitleView(LayoutInflater inflater, ViewGroup parent,
+                                   Bundle savedInstanceState) {
+        return inflateTitle(inflater, parent, savedInstanceState);
     }
 
     void setVerticalGridViewLayout(VerticalGridView listview) {
@@ -240,7 +233,7 @@ public class DetailsSupportFragment extends BaseSupportFragment {
      * that setup should only change the Presenter behavior that is meaningful in DetailsSupportFragment.  For
      * example how a row is aligned in details Fragment.   The default implementation invokes
      * {@link #setupDetailsOverviewRowPresenter(FullWidthDetailsOverviewRowPresenter)}
-     * 
+     *
      */
     protected void setupPresenter(Presenter rowPresenter) {
         if (rowPresenter instanceof FullWidthDetailsOverviewRowPresenter) {
@@ -250,7 +243,7 @@ public class DetailsSupportFragment extends BaseSupportFragment {
 
     /**
      * Called to setup {@link FullWidthDetailsOverviewRowPresenter}.  The default implementation
-     * adds two aligment positions({@link ItemAlignmentFacet}) for ViewHolder of
+     * adds two alignment positions({@link ItemAlignmentFacet}) for ViewHolder of
      * FullWidthDetailsOverviewRowPresenter to align in fragment.
      */
     protected void setupDetailsOverviewRowPresenter(FullWidthDetailsOverviewRowPresenter presenter) {
@@ -322,7 +315,7 @@ public class DetailsSupportFragment extends BaseSupportFragment {
         }
     }
 
-    private void onRowSelected(int selectedPosition, int selectedSubPosition) {
+    void onRowSelected(int selectedPosition, int selectedSubPosition) {
         ObjectAdapter adapter = getAdapter();
         if (adapter == null || adapter.size() == 0 ||
                 (selectedPosition == 0 && selectedSubPosition == 0)) {

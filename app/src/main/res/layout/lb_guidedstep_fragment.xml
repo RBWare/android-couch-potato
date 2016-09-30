@@ -68,6 +68,8 @@
 
                 <com.rbware.github.androidcouchpotato.widget.NonOverlappingLinearLayout
                     android:id="@+id/action_fragment"
+                    android:focusable="true"
+                    android:descendantFocusability="afterDescendants"
                     android:transitionName="action_fragment"
                     android:transitionGroup="false"
                     android:orientation="horizontal"

@@ -40,7 +40,7 @@
  * </ul>
  * <p>
  * Leanback contains a mixture of higher level building blocks such as Fragments in the
- * {@link com.rbware.github.androidcouchpotato.app} package. Notable examples are the
+ * {@link com.rbware.github.androidcouchpotato.app. package. Notable examples are the
  * {@link com.rbware.github.androidcouchpotato.app.BrowseFragment} and the
  * {@link com.rbware.github.androidcouchpotato.app.GuidedStepFragment}.  Helper classes are also provided
  * that work with the leanback fragments, for example the
@@ -56,4 +56,4 @@
  * {@link com.rbware.github.androidcouchpotato.widget.TitleHelper}.
  */
 
-package android.support.v17.leanback;
+package com.rbware.github.androidcouchpotato;

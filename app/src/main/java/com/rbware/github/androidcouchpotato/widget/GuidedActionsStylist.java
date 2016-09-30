@@ -15,46 +15,29 @@ package com.rbware.github.androidcouchpotato.widget;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.content.pm.PackageManager;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Build.VERSION;
 import android.support.annotation.NonNull;
 import com.rbware.github.androidcouchpotato.R;
 import com.rbware.github.androidcouchpotato.transition.TransitionHelper;
 import com.rbware.github.androidcouchpotato.transition.TransitionListener;
 import com.rbware.github.androidcouchpotato.widget.GuidedActionAdapter.EditListener;
-import com.rbware.github.androidcouchpotato.widget.VerticalGridView;
 import com.rbware.github.androidcouchpotato.widget.picker.DatePicker;
-import com.rbware.github.androidcouchpotato.widget.picker.Picker;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.text.TextUtils;
-import android.util.Log;
 import android.util.TypedValue;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.LinearInterpolator;
-import android.view.inputmethod.EditorInfo;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.AccessibilityDelegate;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.view.ViewPropertyAnimator;
-import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Checkable;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -64,10 +47,10 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
+import static com.rbware.github.androidcouchpotato.widget.GuidedAction.EDITING_ACTIVATOR_VIEW;
+import static com.rbware.github.androidcouchpotato.widget.GuidedAction.EDITING_DESCRIPTION;
 import static com.rbware.github.androidcouchpotato.widget.GuidedAction.EDITING_NONE;
 import static com.rbware.github.androidcouchpotato.widget.GuidedAction.EDITING_TITLE;
-import static com.rbware.github.androidcouchpotato.widget.GuidedAction.EDITING_DESCRIPTION;
-import static com.rbware.github.androidcouchpotato.widget.GuidedAction.EDITING_ACTIVATOR_VIEW;
 
 /**
  * GuidedActionsStylist is used within a {@link com.rbware.github.androidcouchpotato.app.GuidedStepFragment}
@@ -161,22 +144,34 @@ public class GuidedActionsStylist implements FragmentAnimationProvider {
      */
     public static final int VIEW_TYPE_DATE_PICKER = 1;
 
+    final static ItemAlignmentFacet sGuidedActionItemAlignFacet;
+    static {
+        sGuidedActionItemAlignFacet = new ItemAlignmentFacet();
+        ItemAlignmentFacet.ItemAlignmentDef alignedDef = new ItemAlignmentFacet.ItemAlignmentDef();
+        alignedDef.setItemAlignmentViewId(R.id.guidedactions_item_title);
+        alignedDef.setAlignedToTextViewBaseline(true);
+        alignedDef.setItemAlignmentOffset(0);
+        alignedDef.setItemAlignmentOffsetWithPadding(true);
+        alignedDef.setItemAlignmentOffsetPercent(0);
+        sGuidedActionItemAlignFacet.setAlignmentDefs(new ItemAlignmentFacet.ItemAlignmentDef[]{alignedDef});
+    }
+
     /**
      * ViewHolder caches information about the action item layouts' subviews. Subclasses of {@link
      * GuidedActionsStylist} may also wish to subclass this in order to add fields.
      * @see GuidedAction
      */
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements FacetProvider {
 
-        private GuidedAction mAction;
+        GuidedAction mAction;
         private View mContentView;
-        private TextView mTitleView;
-        private TextView mDescriptionView;
-        private View mActivatorView;
-        private ImageView mIconView;
-        private ImageView mCheckmarkView;
-        private ImageView mChevronView;
-        private int mEditingMode = EDITING_NONE;
+        TextView mTitleView;
+        TextView mDescriptionView;
+        View mActivatorView;
+        ImageView mIconView;
+        ImageView mCheckmarkView;
+        ImageView mChevronView;
+        int mEditingMode = EDITING_NONE;
         private final boolean mIsSubAction;
 
         final AccessibilityDelegate mDelegate = new AccessibilityDelegate() {
@@ -355,13 +350,22 @@ public class GuidedActionsStylist implements FragmentAnimationProvider {
                 ((GuidedActionItemContainer) itemView).setFocusOutAllowed(!activated);
             }
         }
+
+        @Override
+        public Object getFacet(Class<?> facetClass) {
+            if (facetClass == ItemAlignmentFacet.class) {
+                return sGuidedActionItemAlignFacet;
+            }
+            return null;
+        }
     }
 
     private static String TAG = "GuidedActionsStylist";
 
-    private ViewGroup mMainView;
+    ViewGroup mMainView;
     private VerticalGridView mActionsGridView;
-    private VerticalGridView mSubActionsGridView;
+    VerticalGridView mSubActionsGridView;
+    private View mSubActionsBackground;
     private View mBgView;
     private View mContentView;
     private boolean mButtonActions;
@@ -382,7 +386,7 @@ public class GuidedActionsStylist implements FragmentAnimationProvider {
     private EditListener mEditListener;
 
     private GuidedAction mExpandedAction = null;
-    private Object mExpandTransition;
+    Object mExpandTransition;
 
     /**
      * Creates a view appropriate for displaying a list of GuidedActions, using the provided
@@ -395,7 +399,11 @@ public class GuidedActionsStylist implements FragmentAnimationProvider {
      * <code>LayoutInflater.inflate</code>.
      * @return The view to be added to the caller's view hierarchy.
      */
-    public View onCreateView(LayoutInflater inflater, ViewGroup container) {
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container) {
+        TypedArray ta = inflater.getContext().getTheme().obtainStyledAttributes(
+                R.styleable.LeanbackGuidedStepTheme);
+        float keylinePercent = ta.getFloat(R.styleable.LeanbackGuidedStepTheme_guidedStepKeyline,
+                40);
         mMainView = (ViewGroup) inflater.inflate(onProvideLayoutId(), container, false);
         mContentView = mMainView.findViewById(mButtonActions ? R.id.guidedactions_content2 :
                 R.id.guidedactions_content);
@@ -409,14 +417,17 @@ public class GuidedActionsStylist implements FragmentAnimationProvider {
             if (mActionsGridView == null) {
                 throw new IllegalStateException("No ListView exists.");
             }
-            mActionsGridView.setWindowAlignmentOffset(0);
-            mActionsGridView.setWindowAlignmentOffsetPercent(50f);
+            mActionsGridView.setWindowAlignmentOffsetPercent(keylinePercent);
             mActionsGridView.setWindowAlignment(VerticalGridView.WINDOW_ALIGN_NO_EDGE);
             if (!mButtonActions) {
                 mSubActionsGridView = (VerticalGridView) mMainView.findViewById(
                         R.id.guidedactions_sub_list);
+                mSubActionsBackground = mMainView.findViewById(
+                        R.id.guidedactions_sub_list_background);
             }
         }
+        mActionsGridView.setFocusable(false);
+        mActionsGridView.setFocusableInTouchMode(false);
 
         // Cache widths, chevron alpha values, max and min text lines, etc
         Context ctx = mMainView.getContext();
@@ -468,6 +479,7 @@ public class GuidedActionsStylist implements FragmentAnimationProvider {
         mExpandTransition = null;
         mActionsGridView = null;
         mSubActionsGridView = null;
+        mSubActionsBackground = null;
         mContentView = null;
         mBgView = null;
         mMainView = null;
@@ -899,7 +911,7 @@ public class GuidedActionsStylist implements FragmentAnimationProvider {
         } else {
             if (onUpdateActivatorView(vh, action)) {
                 if (mEditListener != null) {
-                    mEditListener.onGuidedActionEdited(action);
+                    mEditListener.onGuidedActionEditedAndProceed(action);
                 }
             }
             vh.itemView.setFocusable(true);
@@ -1036,6 +1048,7 @@ public class GuidedActionsStylist implements FragmentAnimationProvider {
             }
         }
         TransitionHelper.include(changeGridBounds, mSubActionsGridView);
+        TransitionHelper.include(changeGridBounds, mSubActionsBackground);
         TransitionHelper.addTransition(set, slideAndFade);
         // note that we don't run ChangeBounds for activating view due to the rounding problem
         // of multiple level views ChangeBounds animation causing vertical jittering.
@@ -1065,6 +1078,7 @@ public class GuidedActionsStylist implements FragmentAnimationProvider {
                     }
                     mSubActionsGridView.removeOnLayoutChangeListener(this);
                     mMainView.post(new Runnable() {
+                        @Override
                         public void run() {
                             if (mMainView == null) {
                                 return;
@@ -1138,12 +1152,14 @@ public class GuidedActionsStylist implements FragmentAnimationProvider {
                 lp.height = ViewGroup.MarginLayoutParams.MATCH_PARENT;
                 mSubActionsGridView.setLayoutParams(lp);
                 mSubActionsGridView.setVisibility(View.VISIBLE);
+                mSubActionsBackground.setVisibility(View.VISIBLE);
                 mSubActionsGridView.requestFocus();
                 mSubActionsGridView.setSelectedPosition(0);
                 ((GuidedActionAdapter) mSubActionsGridView.getAdapter())
                         .setActions(avh.getAction().getSubActions());
             } else if (mSubActionsGridView.getVisibility() == View.VISIBLE) {
                 mSubActionsGridView.setVisibility(View.INVISIBLE);
+                mSubActionsBackground.setVisibility(View.INVISIBLE);
                 ViewGroup.MarginLayoutParams lp =
                         (ViewGroup.MarginLayoutParams) mSubActionsGridView.getLayoutParams();
                 lp.height = 0;
@@ -1192,7 +1208,6 @@ public class GuidedActionsStylist implements FragmentAnimationProvider {
      */
     @Override
     public void onImeAppearing(@NonNull List<Animator> animators) {
-        animators.add(createAnimator(mContentView, R.attr.guidedStepImeAppearingAnimation));
     }
 
     /**
@@ -1200,7 +1215,6 @@ public class GuidedActionsStylist implements FragmentAnimationProvider {
      */
     @Override
     public void onImeDisappearing(@NonNull List<Animator> animators) {
-        animators.add(createAnimator(mContentView, R.attr.guidedStepImeDisappearingAnimation));
     }
 
     /*

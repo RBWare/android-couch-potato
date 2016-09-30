@@ -23,16 +23,18 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import com.rbware.github.androidcouchpotato.R;
+import com.rbware.github.androidcouchpotato.widget.ClassPresenterSelector;
+import com.rbware.github.androidcouchpotato.widget.DividerPresenter;
+import com.rbware.github.androidcouchpotato.widget.DividerRow;
 import com.rbware.github.androidcouchpotato.widget.FocusHighlightHelper;
+import com.rbware.github.androidcouchpotato.widget.HorizontalGridView;
 import com.rbware.github.androidcouchpotato.widget.ItemBridgeAdapter;
 import com.rbware.github.androidcouchpotato.widget.PresenterSelector;
-import com.rbware.github.androidcouchpotato.widget.OnItemViewSelectedListener;
 import com.rbware.github.androidcouchpotato.widget.Row;
 import com.rbware.github.androidcouchpotato.widget.RowHeaderPresenter;
-import com.rbware.github.androidcouchpotato.widget.SinglePresenterSelector;
+import com.rbware.github.androidcouchpotato.widget.SectionRow;
 import com.rbware.github.androidcouchpotato.widget.VerticalGridView;
 import android.support.v7.widget.RecyclerView;
-import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnLayoutChangeListener;
@@ -70,14 +72,17 @@ public class HeadersSupportFragment extends BaseRowSupportFragment {
     }
 
     private OnHeaderViewSelectedListener mOnHeaderViewSelectedListener;
-    private OnHeaderClickedListener mOnHeaderClickedListener;
+    OnHeaderClickedListener mOnHeaderClickedListener;
     private boolean mHeadersEnabled = true;
     private boolean mHeadersGone = false;
     private int mBackgroundColor;
     private boolean mBackgroundColorSet;
 
-    private static final PresenterSelector sHeaderPresenter = new SinglePresenterSelector(
-            new RowHeaderPresenter(R.layout.lb_header));
+    private static final PresenterSelector sHeaderPresenter = new ClassPresenterSelector()
+            .addClassPresenter(DividerRow.class, new DividerPresenter())
+            .addClassPresenter(SectionRow.class,
+                    new RowHeaderPresenter(R.layout.lb_section_header, false))
+            .addClassPresenter(Row.class, new RowHeaderPresenter(R.layout.lb_header));
 
     public HeadersSupportFragment() {
         setPresenterSelector(sHeaderPresenter);
@@ -125,8 +130,6 @@ public class HeadersSupportFragment extends BaseRowSupportFragment {
                     }
                 }
             });
-            headerView.setFocusable(true);
-            headerView.setFocusableInTouchMode(true);
             if (mWrapper != null) {
                 viewHolder.itemView.addOnLayoutChangeListener(sLayoutChangeListener);
             } else {
@@ -136,7 +139,7 @@ public class HeadersSupportFragment extends BaseRowSupportFragment {
 
     };
 
-    private static OnLayoutChangeListener sLayoutChangeListener = new OnLayoutChangeListener() {
+    static OnLayoutChangeListener sLayoutChangeListener = new OnLayoutChangeListener() {
         @Override
         public void onLayoutChange(View v, int left, int top, int right, int bottom,
             int oldLeft, int oldTop, int oldRight, int oldBottom) {
@@ -212,8 +215,8 @@ public class HeadersSupportFragment extends BaseRowSupportFragment {
     }
 
     // Wrapper needed because of conflict between RecyclerView's use of alpha
-    // for ADD animations, and RowHeaderPresnter's use of alpha for selected level.
-    private final ItemBridgeAdapter.Wrapper mWrapper = new ItemBridgeAdapter.Wrapper() {
+    // for ADD animations, and RowHeaderPresenter's use of alpha for selected level.
+    final ItemBridgeAdapter.Wrapper mWrapper = new ItemBridgeAdapter.Wrapper() {
         @Override
         public void wrap(View wrapper, View wrapped) {
             ((FrameLayout) wrapper).addView(wrapped);
@@ -258,11 +261,11 @@ public class HeadersSupportFragment extends BaseRowSupportFragment {
     }
 
     @Override
-    void onTransitionStart() {
+    public void onTransitionStart() {
         super.onTransitionStart();
         if (!mHeadersEnabled) {
             // When enabling headers fragment,  the RowHeaderView gets a focus but
-            // isShown() is still false because its parent is INVSIBILE, accessibility
+            // isShown() is still false because its parent is INVISIBLE, accessibility
             // event is not sent.
             // Workaround is: prevent focus to a child view during transition and put
             // focus on it after transition is done.
@@ -277,7 +280,7 @@ public class HeadersSupportFragment extends BaseRowSupportFragment {
     }
 
     @Override
-    void onTransitionEnd() {
+    public void onTransitionEnd() {
         if (mHeadersEnabled) {
             final VerticalGridView listView = getVerticalGridView();
             if (listView != null) {
@@ -288,5 +291,10 @@ public class HeadersSupportFragment extends BaseRowSupportFragment {
             }
         }
         super.onTransitionEnd();
+    }
+
+    public boolean isScrolling() {
+        return getVerticalGridView().getScrollState()
+                != HorizontalGridView.SCROLL_STATE_IDLE;
     }
 }

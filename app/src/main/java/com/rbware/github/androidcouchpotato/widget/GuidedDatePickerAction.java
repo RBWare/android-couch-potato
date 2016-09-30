@@ -14,6 +14,7 @@
 package com.rbware.github.androidcouchpotato.widget;
 
 import android.content.Context;
+import android.os.Bundle;
 import com.rbware.github.androidcouchpotato.widget.picker.DatePicker;
 
 import java.util.Calendar;
@@ -124,10 +125,10 @@ public class GuidedDatePickerAction extends GuidedAction {
         }
     }
 
-    private String mDatePickerFormat;
-    private long mDate;
-    private long mMinDate = Long.MIN_VALUE;
-    private long mMaxDate = Long.MAX_VALUE;
+    String mDatePickerFormat;
+    long mDate;
+    long mMinDate = Long.MIN_VALUE;
+    long mMaxDate = Long.MAX_VALUE;
 
     /**
      * Returns format of date Picker or null if not specified.  The format is a case insensitive
@@ -174,5 +175,15 @@ public class GuidedDatePickerAction extends GuidedAction {
      */
     public long getMaxDate() {
         return mMaxDate;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle bundle, String key) {
+        bundle.putLong(key, getDate());
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle bundle, String key) {
+        setDate(bundle.getLong(key, getDate()));
     }
 }

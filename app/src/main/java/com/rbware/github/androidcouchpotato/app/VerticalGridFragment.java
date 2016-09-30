@@ -13,7 +13,6 @@
  */
 package com.rbware.github.androidcouchpotato.app;
 
-import android.support.annotation.ColorInt;
 import com.rbware.github.androidcouchpotato.R;
 import com.rbware.github.androidcouchpotato.transition.TransitionHelper;
 import com.rbware.github.androidcouchpotato.widget.BrowseFrameLayout;
@@ -23,8 +22,6 @@ import com.rbware.github.androidcouchpotato.widget.OnItemViewSelectedListener;
 import com.rbware.github.androidcouchpotato.widget.Presenter;
 import com.rbware.github.androidcouchpotato.widget.Row;
 import com.rbware.github.androidcouchpotato.widget.RowPresenter;
-import com.rbware.github.androidcouchpotato.widget.TitleHelper;
-import com.rbware.github.androidcouchpotato.widget.TitleView;
 import com.rbware.github.androidcouchpotato.widget.VerticalGridPresenter;
 import com.rbware.github.androidcouchpotato.widget.ObjectAdapter;
 import android.os.Bundle;
@@ -40,13 +37,13 @@ import android.view.ViewGroup;
  * an {@link ObjectAdapter}.
  */
 public class VerticalGridFragment extends BaseFragment {
-    private static final String TAG = "VerticalGridFragment";
-    private static boolean DEBUG = false;
+    static final String TAG = "VerticalGridFragment";
+    static boolean DEBUG = false;
 
     private ObjectAdapter mAdapter;
     private VerticalGridPresenter mGridPresenter;
-    private VerticalGridPresenter.ViewHolder mGridViewHolder;
-    private OnItemViewSelectedListener mOnItemViewSelectedListener;
+    VerticalGridPresenter.ViewHolder mGridViewHolder;
+    OnItemViewSelectedListener mOnItemViewSelectedListener;
     private OnItemViewClickedListener mOnItemViewClickedListener;
     private Object mSceneAfterEntranceTransition;
     private int mSelectedPosition = -1;
@@ -119,14 +116,14 @@ public class VerticalGridFragment extends BaseFragment {
         mOnItemViewSelectedListener = listener;
     }
 
-    private void gridOnItemSelected(int position) {
+    void gridOnItemSelected(int position) {
         if (position != mSelectedPosition) {
             mSelectedPosition = position;
             showOrHideTitle();
         }
     }
 
-    private void showOrHideTitle() {
+    void showOrHideTitle() {
         if (mGridViewHolder.getGridView().findViewHolderForAdapterPosition(mSelectedPosition)
                 == null) {
             return;
@@ -160,7 +157,9 @@ public class VerticalGridFragment extends BaseFragment {
             Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.lb_vertical_grid_fragment,
                 container, false);
-        setTitleView((TitleView) root.findViewById(R.id.browse_title_group));
+        ViewGroup gridFrame = (ViewGroup) root.findViewById(R.id.grid_frame);
+        installTitleView(inflater, gridFrame, savedInstanceState);
+        getProgressBarManager().setRootView(root);
         return root;
     }
 
