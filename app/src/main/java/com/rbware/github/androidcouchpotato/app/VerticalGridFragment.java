@@ -63,7 +63,7 @@ public class VerticalGridFragment extends BaseFragment {
             mGridPresenter.setOnItemViewClickedListener(mOnItemViewClickedListener);
         }
         if (mOnItemViewLongClickedListener != null) {
-            mGridPresenter.setOnItemLongClickedListener(mOnItemViewLongClickedListener);
+            mGridPresenter.setOnItemViewLongClickedListener(mOnItemViewLongClickedListener);
         }
     }
 
