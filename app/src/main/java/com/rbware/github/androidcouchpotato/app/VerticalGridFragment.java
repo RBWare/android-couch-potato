@@ -18,6 +18,7 @@ import com.rbware.github.androidcouchpotato.transition.TransitionHelper;
 import com.rbware.github.androidcouchpotato.widget.BrowseFrameLayout;
 import com.rbware.github.androidcouchpotato.widget.OnChildLaidOutListener;
 import com.rbware.github.androidcouchpotato.widget.OnItemViewClickedListener;
+import com.rbware.github.androidcouchpotato.widget.OnItemViewLongClickedListener;
 import com.rbware.github.androidcouchpotato.widget.OnItemViewSelectedListener;
 import com.rbware.github.androidcouchpotato.widget.Presenter;
 import com.rbware.github.androidcouchpotato.widget.Row;
@@ -45,6 +46,7 @@ public class VerticalGridFragment extends BaseFragment {
     VerticalGridPresenter.ViewHolder mGridViewHolder;
     OnItemViewSelectedListener mOnItemViewSelectedListener;
     private OnItemViewClickedListener mOnItemViewClickedListener;
+    private OnItemViewLongClickedListener mOnItemViewLongClickedListener;
     private Object mSceneAfterEntranceTransition;
     private int mSelectedPosition = -1;
 
@@ -59,6 +61,9 @@ public class VerticalGridFragment extends BaseFragment {
         mGridPresenter.setOnItemViewSelectedListener(mViewSelectedListener);
         if (mOnItemViewClickedListener != null) {
             mGridPresenter.setOnItemViewClickedListener(mOnItemViewClickedListener);
+        }
+        if (mOnItemViewLongClickedListener != null) {
+            mGridPresenter.setOnItemLongClickedListener(mOnItemViewLongClickedListener);
         }
     }
 
@@ -151,6 +156,25 @@ public class VerticalGridFragment extends BaseFragment {
     public OnItemViewClickedListener getOnItemViewClickedListener() {
         return mOnItemViewClickedListener;
     }
+
+    /**
+     * Sets an item long-clicked listener.
+     */
+    public void setOnItemViewLongClickedListener(OnItemViewLongClickedListener listener) {
+        mOnItemViewLongClickedListener = listener;
+        if (mGridPresenter != null) {
+            mGridPresenter.setOnItemViewLongClickedListener(mOnItemViewLongClickedListener);
+        }
+    }
+
+    /**
+     * Returns the item long-clicked listener.
+     */
+    public OnItemViewLongClickedListener getOnItemViewLongClickedListener() {
+        return mOnItemViewLongClickedListener;
+    }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

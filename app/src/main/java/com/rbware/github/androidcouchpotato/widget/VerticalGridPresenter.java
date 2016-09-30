@@ -57,6 +57,15 @@ public class VerticalGridPresenter extends Presenter {
                         }
                     }
                 });
+                itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        if (getOnItemViewLongClickedListener() != null) {
+                            getOnItemViewLongClickedListener().onItemLongClicked(itemViewHolder.mHolder, itemViewHolder.mItem, null, null);
+                        }
+                        return false;
+                    }
+                });
             }
         }
 
@@ -98,6 +107,7 @@ public class VerticalGridPresenter extends Presenter {
     private boolean mKeepChildForeground = true;
     private OnItemViewSelectedListener mOnItemViewSelectedListener;
     private OnItemViewClickedListener mOnItemViewClickedListener;
+    private OnItemViewLongClickedListener mOnItemViewLongClickedListener;
     private boolean mRoundedCornersEnabled = true;
     ShadowOverlayHelper mShadowOverlayHelper;
     private ItemBridgeAdapter.Wrapper mShadowOverlayWrapper;
@@ -376,6 +386,23 @@ public class VerticalGridPresenter extends Presenter {
      */
     public final OnItemViewClickedListener getOnItemViewClickedListener() {
         return mOnItemViewClickedListener;
+    }
+
+    /**
+     * Sets the item long-clicked listener.
+     * OnItemViewLongClickedListener will override {@link View.OnLongClickListener} that
+     * item presenter sets during {@link Presenter#onCreateViewHolder(ViewGroup)}.
+     * So in general, developer should choose one of the listeners but not both.
+     */
+    public final void setOnItemViewLongClickedListener(OnItemViewLongClickedListener listener) {
+        mOnItemViewLongClickedListener = listener;
+    }
+
+    /**
+     * Returns the item long-clicked listener.
+     */
+    public final OnItemViewLongClickedListener getOnItemViewLongClickedListener() {
+        return mOnItemViewLongClickedListener;
     }
 
     void selectChildView(ViewHolder vh, View view) {
